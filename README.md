@@ -1,6 +1,6 @@
 # OtyaHub
 
-**OtyaHub** is the public developer and partner entry point for **Otya OS**, operated by **Otya Hold Ltd**. It publishes public documentation, safe examples, product guidance, and integration information—not private operations or administrative controls.
+**OtyaHub** is the public developer and partner entry point for **Otya OS**. It publishes public documentation, safe examples, product guidance, and integration information—not private operations or administrative controls. This public hub describes product roles and does not assert the legal registration or trading-name status of any parent entity.
 
 ## Public surfaces
 
@@ -26,7 +26,8 @@
 - [Public automation policy](PUBLIC_AUTOMATION.md)
 - [Developer and communication channels](DEVELOPER_CHANNELS.md)
 - [Public Postman collection](postman/Otya-public.postman_collection.json)
-- [Otya platform service blueprint and pricing](platform/SERVICE_BLUEPRINT_AND_PRICING_V1.md)
+- [Otya platform service blueprint (proposal; pricing not finalized)](platform/SERVICE_BLUEPRINT_AND_PRICING_V1.md)
+- [Public ecosystem service map](ECOSYSTEM_SERVICE_MAP.md)
 - [Security and vulnerability reporting](SECURITY.md)
 
 ## What belongs here
@@ -52,7 +53,6 @@ If Otya's application or server repositories become private later, this reposito
 
 ## Product naming and ecosystem boundaries
 
-- **Otya Hold Ltd** — parent company.
 - **Otya OS** — unified platform and shared ecosystem experience.
 - **Otya End** — canonical name of the shared backend and integration layer. The existing `Otya-Server` GitHub repository slug is a compatibility identifier, not the product name.
 - **OtyaPoint** — the owner's shop/business operations application; its private retail, staff, inventory, and financial data must not be published in this public hub.
