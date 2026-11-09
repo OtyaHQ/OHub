@@ -4,7 +4,7 @@ This page describes the intended roles of Otya products for developers, partners
 
 ## One connected ecosystem
 
-Otya Hold Ltd operates a connected family of products. The operating business and shop identity is **Otya Hold Ltd T/A OtyaPoint**. “OmniPoint” is a legacy identifier in older repositories/resources only, not the current trading identity. Each service has a clear responsibility; shared identity or navigation does not mean every product shares all data.
+The Otya ecosystem is a connected family of products. **OtyaPoint** is the public product name for the shop and business-operations experience. Each service has a clear responsibility; shared identity or navigation does not mean every product shares all data. Legal ownership and registration details are intentionally not stated on this product map.
 
 | Product/service | Public purpose | Integration principle |
 |---|---|---|
@@ -21,7 +21,7 @@ Otya Hold Ltd operates a connected family of products. The operating business an
 
 Mobile-money agency operations are a core OtyaPoint business capability. The intended workflow includes cash-in/cash-out, airtime/data and bill-payment requests, cash and provider-float tracking, commissions, receipts, transaction history and reconciliation.
 
-Provider integrations such as Interswitch/Quickteller, Airtel Money and MTN Mobile Money must remain behind a consistent adapter contract so a future provider can be added or replaced without rewriting the business application.
+Provider integrations must remain behind a consistent adapter contract so providers can be added or replaced without rewriting the business application. Interswitch Marketplace Routing and Quickteller Business are separate products with distinct API contracts; neither should be treated as an alias for the other. Airtel Money and MTN Mobile Money are separate provider integrations as well.
 
 A service must not display a transaction as successful until the provider's trusted response/status has been verified. Timeouts can leave a transaction pending or unknown and require reconciliation before retrying. Public documentation does not imply any payment integration is currently live or approved.
 
