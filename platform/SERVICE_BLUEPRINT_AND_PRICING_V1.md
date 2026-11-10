@@ -112,7 +112,7 @@ Do not finalise prices until costs, provider terms, support workload and target-
 3. Monthly plans for teams, monitoring, support and repeat workflows.
 4. Pay-as-you-go usage for costly services, with limits and clear unit prices.
 5. Partner referrals only when disclosed; recommendations must not be secretly ranked by commission.
-6. Optional paid Otya Player extras only after core playback is reliable and useful; never make local playback depend on a paid account.
+6. Optional paid Otya Media extras only after core playback is reliable and useful; never make local playback depend on a paid account.
 
 Do not promise that any provider pays referral commission unless a real partner agreement exists.
 
