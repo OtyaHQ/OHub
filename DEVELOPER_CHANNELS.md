@@ -33,7 +33,7 @@ Never publish real access tokens, refresh tokens, service secrets, user data or 
 
 ## LinkedIn
 
-Use LinkedIn primarily for PeterSmart Link's professional/company presence and meaningful Otya announcements.
+Use LinkedIn primarily for Otya's professional/company presence and meaningful product/ecosystem announcements.
 
 Good uses:
 - release milestones after they are actually released;
@@ -42,7 +42,7 @@ Good uses:
 - partnerships and hiring when real;
 - links to permanent Otya website/newsroom posts.
 
-Do not turn LinkedIn into Otya's source of truth. Product status, legal documents, downloads and support must remain on Otya/PeterSmart Link controlled surfaces.
+Do not turn LinkedIn into Otya's source of truth. Product status, legal documents, downloads and support must remain on Otya-controlled surfaces.
 
 A LinkedIn Developer application should only be created for a concrete integration need such as approved sign-in, member sharing, or an approved organization/community-management integration. Do not request broad LinkedIn permissions simply because they are available.
 

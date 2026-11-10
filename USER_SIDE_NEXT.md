@@ -1,6 +1,6 @@
 # User-side Next
 
-Next is the user-facing assistant inside Otya. It must be separated from the owner/operator assistant that can work with PeterSmart Link systems.
+Next is the user-facing assistant inside Otya. It must be separated from the owner/operator assistant that can work with Otya systems.
 
 ## Roles
 
@@ -15,11 +15,11 @@ May help a user with:
 - using the signed-in user's own permitted context when needed;
 - explaining errors and guiding recovery.
 
-It must not receive PeterSmart Link administrative credentials or tools such as production GitHub, Cloudflare, Resend, Firebase administration, release publishing or other operator-only capabilities.
+It must not receive Otya owner/admin credentials or tools such as production GitHub, Cloudflare, Resend, Firebase administration, release publishing or other operator-only capabilities.
 
 ### Owner/operator assistant
 
-May inspect and operate PeterSmart Link systems under the separate approval model in `AI_OPERATING_MODEL.md`.
+May inspect and operate Otya systems under the separate approval model in `AI_OPERATING_MODEL.md`.
 
 The two roles may share verified public Otya product knowledge, but they do not share authority.
 
@@ -117,6 +117,6 @@ The product promise should focus on what Otya controls: useful context, fast str
 
 ## Distribution before Google Play
 
-Otya can run a controlled beta without Google Play using a verified signed APK distributed through approved PeterSmart Link/Otya channels. Google Play-specific production protections and store workflows should be tracked separately rather than faked.
+Otya can run a controlled beta without Google Play using a verified signed APK distributed through approved Otya channels. Google Play-specific production protections and store workflows should be tracked separately rather than faked.
 
 Do not weaken production security claims merely to make a sideload beta appear Play-distributed.

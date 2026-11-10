@@ -1,8 +1,8 @@
 # Otya News
 
-Official public updates from PeterSmart Link about Otya.
+Official public updates from Otya about its products and services.
 
-Announcements here are the permanent public record for product milestones, beta/reliability updates and releases. Channel-specific versions for Telegram, LinkedIn or email should point back to the same verified facts rather than introduce a different release status.
+Announcements here are the permanent public record for product milestones, beta/reliability updates and releases. Channel-specific versions for Telegram, LinkedIn or email should point back to the same verified facts rather than introduce a different release status. Use Otya as the public brand. Otya Holdings Limited is the intended parent entity; its URSB registration is in progress.
 
 ## 2026
 

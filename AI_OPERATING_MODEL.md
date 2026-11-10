@@ -54,7 +54,7 @@ Do not execute these merely because they are technically possible:
 - delete user data, databases, storage or infrastructure;
 - change billing, paid-plan or purchasing configuration;
 - publish or materially change final legal Terms/Privacy commitments;
-- approve an incident/security statement on behalf of PeterSmart Link;
+- approve an incident/security statement on behalf of Otya;
 - grant new third-party access to production data.
 
 The assistant may prepare these actions and present the exact proposed change for approval.

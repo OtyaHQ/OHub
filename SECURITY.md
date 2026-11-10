@@ -25,6 +25,6 @@ Please include:
 
 ## Scope
 
-The official Otya website, Otya Player, Otya account surfaces, and connected Otya services may be in scope when they are operated by PeterSmart Link. Third-party services are governed by their own security programs.
+The official Otya website, Otya Media, OtyaPoint public surfaces, Otya account services and connected Otya services are in scope where Otya operates or controls the affected service. Third-party services are governed by their own security programs.
 
-PeterSmart Link will acknowledge good-faith reports and prioritize remediation based on demonstrated risk.
+Otya's current operations team will acknowledge good-faith reports and prioritize remediation based on demonstrated risk. Otya Holdings Limited is the intended parent entity and its URSB registration is in progress; this policy does not claim that the company is already incorporated.
