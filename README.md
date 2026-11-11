@@ -23,6 +23,7 @@ Otya product identity is independent of public domain names. The current public 
 
 ## Operating documents
 
+- [Ecosystem account governance](ACCOUNT_GOVERNANCE.md)
 - [Beta scope and acceptance](BETA.md)
 - [AI operating model](AI_OPERATING_MODEL.md)
 - [User-side Next](USER_SIDE_NEXT.md)
