@@ -77,7 +77,7 @@ jobs:
           grep -Fq 'security@otya.site' SECURITY.md
           grep -Fq '* @PeterSmartLink' .github/CODEOWNERS
           grep -Fq '[Security and vulnerability reporting](SECURITY.md)' README.md
-          ! grep -Fq 'petersmartlink.com/docs' README.md
+          ! grep -Fq 'https://otya.site/docs' README.md
           ! grep -Fq 'Online Music behavior that is already supported' BETA.md
 
       - name: Check public JSON contracts
