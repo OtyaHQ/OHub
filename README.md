@@ -4,14 +4,18 @@
 
 ## Public surfaces
 
-- Product: https://petersmartlink.com
-- Help and documentation: https://docs.petersmartlink.com
-- Service status: https://status.petersmartlink.com
-- Account and product space: https://space.petersmartlink.com
-- Privacy: https://petersmartlink.com/privacy
-- Terms: https://petersmartlink.com/terms
-- Download: https://petersmartlink.com/download/otya-player
+- Product: https://otya.site
+- Help and documentation: https://docs.otya.site
+- Service status: https://status.otya.site
+- Account and product space: https://space.otya.site
+- Privacy: https://otya.site/privacy
+- Terms: https://otya.site/terms
+- Download: https://otya.site/download/otya-player
 - News: [Otya News](news/)
+
+## Domain portability
+
+Otya product identity is independent of public domain names. The current public addresses are configurable entry points; product IDs, account IDs, service bindings, data schemas and authorization scopes must not use a hostname as their identity. See [Domain portability and service addressing](DOMAIN_PORTABILITY.md) before adding a URL to code or documentation.
 
 ## Latest update
 
