@@ -19,7 +19,7 @@ Use only routes verified on the official domain. Do not publish guessed document
 
 - [Beta scope and acceptance](BETA.md)
 - [AI operating model](AI_OPERATING_MODEL.md)
-- [O user-side experience](USER_SIDE_NEXT.md)
+- [Product assistant boundaries](PRODUCT_ASSISTANTS.md)
 - [AI provider strategy](AI_PROVIDER_STRATEGY.md)
 - [Public automation policy](PUBLIC_AUTOMATION.md)
 - [Developer and communication channels](DEVELOPER_CHANNELS.md)
