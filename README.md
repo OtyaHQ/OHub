@@ -28,6 +28,7 @@
 - [Public Postman collection](postman/Otya-public.postman_collection.json)
 - [Otya platform service blueprint (proposal; pricing not finalized)](platform/SERVICE_BLUEPRINT_AND_PRICING_V1.md)
 - [Public ecosystem service map](ECOSYSTEM_SERVICE_MAP.md)
+- [Otya ecosystem engineering standard](ENGINEERING_STANDARD.md)
 - [Security and vulnerability reporting](SECURITY.md)
 
 ## What belongs here
@@ -56,7 +57,7 @@ If Otya's application or server repositories become private later, this reposito
 - **Otya OS** — unified platform and shared ecosystem experience.
 - **Otya End** — canonical name of the shared backend and integration layer. The existing `Otya-Server` GitHub repository slug is a compatibility identifier, not the product name.
 - **OtyaPoint** — the owner's shop/business operations application; its private retail, staff, inventory, and financial data must not be published in this public hub.
-- **Otya Media** — the local-first media player (existing repository slug: `OtyaPlayer`). Core playback remains available without the backend.
+- **Omy Play** — the local-first media and entertainment product (existing repository slug: `OtyaPlayer`). Core playback remains available without the backend.
 - **OtyaHub** — this public developer and partner information surface.
 - **Next** — private owner intelligence application; do not expose owner-only operations or internal infrastructure through public content.
 
