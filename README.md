@@ -1,17 +1,15 @@
-# OtyaHub
+# OHub
 
-**OtyaHub** is the public developer and partner entry point for **Otya OS**. It publishes public documentation, safe examples, product guidance, and integration information—not private operations or administrative controls. This public hub describes product roles and does not assert the legal registration or trading-name status of any parent entity.
+**OHub** is the public developer and partner entry point for the Otya ecosystem. It publishes public documentation, safe examples, product guidance and integration information—not private operations or administrative controls.
 
-## Public surfaces
+## Public surface
 
-- Product: https://petersmartlink.com
-- Help and documentation: https://docs.petersmartlink.com
-- Service status: https://status.petersmartlink.com
-- Account and product space: https://space.petersmartlink.com
-- Privacy: https://petersmartlink.com/privacy
-- Terms: https://petersmartlink.com/terms
-- Download: https://petersmartlink.com/download/otya-player
-- News: [Otya News](news/)
+- Official ecosystem domain: https://otya.site
+- News and public product updates: [Otya News](news/)
+- Security: [OHub security policy](SECURITY.md)
+- Developer and partner guidance: this repository
+
+Use only routes verified on the official domain. Do not publish guessed documentation, download, status or account URLs.
 
 ## Latest update
 
@@ -21,52 +19,47 @@
 
 - [Beta scope and acceptance](BETA.md)
 - [AI operating model](AI_OPERATING_MODEL.md)
-- [User-side Next](USER_SIDE_NEXT.md)
+- [O user-side experience](USER_SIDE_NEXT.md)
 - [AI provider strategy](AI_PROVIDER_STRATEGY.md)
 - [Public automation policy](PUBLIC_AUTOMATION.md)
 - [Developer and communication channels](DEVELOPER_CHANNELS.md)
 - [Public Postman collection](postman/Otya-public.postman_collection.json)
-- [Otya platform service blueprint (proposal; pricing not finalized)](platform/SERVICE_BLUEPRINT_AND_PRICING_V1.md)
+- [Otya ecosystem service blueprint](platform/SERVICE_BLUEPRINT_AND_PRICING_V1.md)
 - [Public ecosystem service map](ECOSYSTEM_SERVICE_MAP.md)
 - [Otya ecosystem engineering standard](ENGINEERING_STANDARD.md)
 - [Security and vulnerability reporting](SECURITY.md)
 
+## Canonical product names
+
+- **Otya** — the umbrella brand for the connected ecosystem.
+- **OPoint** — the retail and business-operations application.
+- **Omy Play** — the local-first media application.
+- **O** — the private owner-AI application.
+- **OEnd** — shared backend, identity integration and service infrastructure.
+- **Otya ID** — shared account identity, email OTP and optional linked Telegram OTP delivery.
+- **Otya Control** — private administration and operations.
+- **OHub** — this public developer and partner documentation surface.
+
+Product data and privileges remain isolated. OHub contains only intentionally public contracts, samples and guidance. It must never contain private operational inventories, credentials, signing material, personal data, customer financial data or owner-only AI tools.
+
 ## What belongs here
 
-This repository may contain:
-
-- public product and developer-facing documentation;
-- public release and service-health checks;
-- safe API examples that contain no credentials or private user data;
-- links to official Otya support, security and community surfaces;
-- public GitHub Actions that operate only on information safe to expose.
+- Public product and developer-facing documentation.
+- Public release and service-health checks with verified sources.
+- Safe API examples containing no credentials or private user data.
+- Links to official Otya support, security and community surfaces.
+- Public GitHub Actions that operate only on information safe to expose.
 
 ## What does not belong here
 
-Do not commit or print:
+Do not commit or print production credentials, API keys, signing material, tokens, service-account files, private source code, internal infrastructure inventories, private endpoints, administrative procedures, user data, crash payloads or account-recovery material.
 
-- production credentials, API keys, signing material, tokens or service-account files;
-- private source code copied here only to obtain public-runner minutes;
-- internal infrastructure inventories, private endpoints or administrative procedures;
-- user data, crash payloads, private logs or account-recovery material.
-
-If Otya's application or server repositories become private later, this repository can remain public as the stable product/developer hub. Public workflows must continue to operate only on public inputs unless a separately reviewed security design explicitly permits otherwise.
-
-## Product naming and ecosystem boundaries
-
-- **Otya OS** — unified platform and shared ecosystem experience.
-- **Otya End** — canonical name of the shared backend and integration layer. The existing `Otya-Server` GitHub repository slug is a compatibility identifier, not the product name.
-- **OtyaPoint** — the owner's shop/business operations application; its private retail, staff, inventory, and financial data must not be published in this public hub.
-- **Omy Play** — the local-first media and entertainment product (existing repository slug: `OtyaPlayer`). Core playback remains available without the backend.
-- **OtyaHub** — this public developer and partner information surface.
-- **Next** — private owner intelligence application; do not expose owner-only operations or internal infrastructure through public content.
-
-Keep existing repository slugs, API paths, Worker names, app IDs, and public links unchanged until a separately reviewed compatibility migration is approved. Legacy all-caps `OTYA` identifiers may remain in compatibility-sensitive code or historical records, but public product copy should use the canonical names above.
+If application/server repositories become private later, OHub can remain the stable public developer hub. Public workflows must continue to operate only on public inputs unless a separately reviewed security design explicitly permits otherwise.
 
 ## Release status
 
-Otya v1 is still under acceptance. A successful CI build is not the same as a released or physically device-tested build.
+A successful CI build is not the same as a released or physically device-tested build. Public release claims must link to immutable build evidence and verified product status.
 
 ## Security
 
-Please use the [Otya Security Policy](SECURITY.md) to report vulnerabilities privately. Do not publish secrets, tokens, exploit details or user data in a public issue.
+Please use the [OHub Security Policy](SECURITY.md) to report vulnerabilities privately. Do not publish secrets, tokens, exploit details or user data in a public issue.
