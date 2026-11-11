@@ -7,7 +7,23 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "https://petersmartlink.com"
+      "value": "https://otya.site"
+    },
+    {
+      "key": "api_url",
+      "value": "https://api.otya.site"
+    },
+    {
+      "key": "docs_url",
+      "value": "https://docs.otya.site"
+    },
+    {
+      "key": "status_url",
+      "value": "https://status.otya.site"
+    },
+    {
+      "key": "space_url",
+      "value": "https://space.otya.site"
     }
   ],
   "item": [
@@ -19,7 +35,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": "{{base_url}}/latest"
+            "url": "{{api_url}}/latest"
           },
           "event": [
             {
@@ -40,7 +56,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": "{{base_url}}/api/version"
+            "url": "{{api_url}}/api/version"
           },
           "event": [
             {
@@ -66,7 +82,7 @@
           "request": {
             "method": "GET",
             "header": [],
-            "url": "{{base_url}}/docs"
+            "url": "{{docs_url}}"
           }
         },
         {
