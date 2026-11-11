@@ -1,25 +1,25 @@
-# Otya OS — Public Ecosystem Service Map
+# Otya ecosystem — Public Ecosystem Service Map
 
 This page describes the intended roles of Otya products for developers, partners and customers. It excludes private infrastructure details, credentials, customer records and administrative endpoints.
 
 ## One connected ecosystem
 
-The Otya ecosystem is a connected family of products. **OtyaPoint** is the public product name for the shop and business-operations experience. Each service has a clear responsibility; shared identity or navigation does not mean every product shares all data. Legal ownership and registration details are intentionally not stated on this product map.
+The Otya ecosystem is a connected family of products. **OPoint** is the public product name for the shop and business-operations experience. Each service has a clear responsibility; shared identity or navigation does not mean every product shares all data. Legal ownership and registration details are intentionally not stated on this product map.
 
 | Product/service | Public purpose | Integration principle |
 |---|---|---|
-| **Otya OS** | Unified experience across the Otya family | Consistent identity, design and service discovery |
+| **Otya ecosystem** | Unified experience across the Otya family | Consistent identity, design and service discovery |
 | **Otya End** | Shared backend and integration layer | Common documented contracts with product-specific authorization |
-| **OtyaPoint** | Business operations for the owner's shop, including retail and agency workflows | Financial operations require partner verification, reconciliation and appropriate controls |
+| **OPoint** | Business operations for the owner's shop, including retail and agency workflows | Financial operations require partner verification, reconciliation and appropriate controls |
 | **Omy Play** | Media and entertainment product for audio/video, private media and device-to-device sharing | Core playback remains useful offline; account/cloud features are optional |
-| **Leo / Otya Next** | Private owner-facing AI coordinator | Owner-only tools stay private and require server-side authorization |
-| **OtyaHub** | Public developer and partner information | Publish safe docs, integration guidance and public release information |
+| **Leo / O** | Private owner-facing AI coordinator | Owner-only tools stay private and require server-side authorization |
+| **OHub** | Public developer and partner information | Publish safe docs, integration guidance and public release information |
 | **Resend** | Transactional email delivery and event visibility | Email integration is server-side; secrets and private delivery payloads stay protected |
 | **Payment partners** | Approved provider rails for agency services | Provider adapters are replaceable; status is confirmed by trusted provider evidence, not UI optimism |
 
 ## Mobile-money agency readiness
 
-Mobile-money agency operations are a core OtyaPoint business capability. The intended workflow includes cash-in/cash-out, airtime/data and bill-payment requests, cash and provider-float tracking, commissions, receipts, transaction history and reconciliation.
+Mobile-money agency operations are a core OPoint business capability. The intended workflow includes cash-in/cash-out, airtime/data and bill-payment requests, cash and provider-float tracking, commissions, receipts, transaction history and reconciliation.
 
 Provider integrations must remain behind a consistent adapter contract so providers can be added or replaced without rewriting the business application. Interswitch Marketplace Routing and Quickteller Business are separate products with distinct API contracts; neither should be treated as an alias for the other. Airtel Money and MTN Mobile Money are separate provider integrations as well.
 
