@@ -11,7 +11,7 @@ The Otya ecosystem is a connected family of products. **OtyaPoint** is the publi
 | **Otya OS** | Unified experience across the Otya family | Consistent identity, design and service discovery |
 | **Otya End** | Shared backend and integration layer | Common documented contracts with product-specific authorization |
 | **OtyaPoint** | Business operations for the owner's shop, including retail and agency workflows | Financial operations require partner verification, reconciliation and appropriate controls |
-| **Otya Media** | Local-first media player for audio/video, file management and device-to-device sharing | Core playback remains useful offline; account/cloud features are optional |
+| **Omy Play** | Media and entertainment product for audio/video, private media and device-to-device sharing | Core playback remains useful offline; account/cloud features are optional |
 | **Leo / Otya Next** | Private owner-facing AI coordinator | Owner-only tools stay private and require server-side authorization |
 | **OtyaHub** | Public developer and partner information | Publish safe docs, integration guidance and public release information |
 | **Resend** | Transactional email delivery and event visibility | Email integration is server-side; secrets and private delivery payloads stay protected |
