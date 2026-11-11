@@ -35,16 +35,23 @@ jobs:
 
       - name: Check canonical public URLs
         shell: bash
+        env:
+          OTYA_PUBLIC_SURFACES_READY: ${{ vars.OTYA_PUBLIC_SURFACES_READY }}
         run: |
           set -euo pipefail
+          if [[ "$OTYA_PUBLIC_SURFACES_READY" != "true" ]]; then
+            echo "Live checks are disabled until the Otya domain migration is delegated and verified."
+            exit 0
+          fi
           urls=(
-            "https://petersmartlink.com"
-            "https://docs.petersmartlink.com"
-            "https://status.petersmartlink.com"
-            "https://space.petersmartlink.com"
-            "https://petersmartlink.com/privacy"
-            "https://petersmartlink.com/terms"
-            "https://petersmartlink.com/download/otya-player"
+            "https://otya.site"
+            "https://api.otya.site/health"
+            "https://docs.otya.site"
+            "https://status.otya.site"
+            "https://space.otya.site"
+            "https://otya.site/privacy"
+            "https://otya.site/terms"
+            "https://otya.site/download/otya-player"
           )
 
           for url in "${urls[@]}"; do
@@ -67,19 +74,25 @@ jobs:
           test -f postman/Otya-public.postman_collection.json
           test -f SECURITY.md
           test -f .github/CODEOWNERS
-          grep -Fq 'support@petersmartlink.com' SECURITY.md
-          grep -Fq '* @PeterSmartLink' .github/CODEOWNERS
+          grep -Fq 'security@otya.site' SECURITY.md
+          grep -Fq '* @peterkatabira' .github/CODEOWNERS
           grep -Fq '[Security and vulnerability reporting](SECURITY.md)' README.md
-          ! grep -Fq 'petersmartlink.com/docs' README.md
+          ! grep -Fq 'https://otya.site/docs' README.md
           ! grep -Fq 'Online Music behavior that is already supported' BETA.md
 
       - name: Check public JSON contracts
         shell: bash
+        env:
+          OTYA_PUBLIC_SURFACES_READY: ${{ vars.OTYA_PUBLIC_SURFACES_READY }}
         run: |
           set -euo pipefail
+          if [[ "$OTYA_PUBLIC_SURFACES_READY" != "true" ]]; then
+            echo "Skipping live API checks until the Otya domain migration is verified."
+            exit 0
+          fi
           for url in \
-            "https://petersmartlink.com/latest" \
-            "https://petersmartlink.com/api/version"
+            "https://api.otya.site/latest" \
+            "https://api.otya.site/api/version"
           do
             echo "Checking $url"
             curl \
@@ -96,8 +109,14 @@ jobs:
 
       - name: Check public authentication protection
         shell: bash
+        env:
+          OTYA_PUBLIC_SURFACES_READY: ${{ vars.OTYA_PUBLIC_SURFACES_READY }}
         run: |
           set -euo pipefail
+          if [[ "$OTYA_PUBLIC_SURFACES_READY" != "true" ]]; then
+            echo "Skipping live Turnstile smoke check until the Otya domain migration is verified."
+            exit 0
+          fi
           curl \
             --fail \
             --silent \
@@ -106,7 +125,7 @@ jobs:
             --max-time 15 \
             --retry 1 \
             --output /tmp/otya-turnstile.json \
-            "https://petersmartlink.com/api/security/turnstile/config"
+            "https://api.otya.site/api/security/turnstile/config"
           python3 - <<'PY'
           import json
           from pathlib import Path

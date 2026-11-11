@@ -4,7 +4,7 @@ Security reports should be handled privately.
 
 ## Report a vulnerability
 
-Email **support@petersmartlink.com** with a clear subject such as `Otya security report`.
+Email **security@otya.site** with a clear subject such as `Otya security report`.
 
 Please include:
 
