@@ -87,7 +87,7 @@ Use a hybrid model; do not charge a subscription merely to read help articles.
 - Public documentation, basic guides, checklists and templates.
 - Basic service/provider comparison and official links.
 - Limited project inventory and read-only diagnostics.
-- Otya Media's local playback and essential offline functions.
+- Omy Play's local playback and essential offline functions.
 - Clear estimates before any billable operation.
 
 ### Pay as you go
@@ -112,7 +112,7 @@ Do not finalise prices until costs, provider terms, support workload and target-
 3. Monthly plans for teams, monitoring, support and repeat workflows.
 4. Pay-as-you-go usage for costly services, with limits and clear unit prices.
 5. Partner referrals only when disclosed; recommendations must not be secretly ranked by commission.
-6. Optional paid Otya Media extras only after core playback is reliable and useful; never make local playback depend on a paid account.
+6. Optional paid Omy Play extras only after core playback is reliable and useful; never make local playback depend on a paid account.
 
 Do not promise that any provider pays referral commission unless a real partner agreement exists.
 
@@ -121,7 +121,7 @@ Do not promise that any provider pays referral commission unless a real partner 
 - Otya owns the customer journey, service catalogue, workflow state, permissions, receipts, support and audit trail.
 - Providers remain authoritative for their accounts, domain registrations, deployments, official filings and charges.
 - Use documented provider APIs/OAuth where available; do not automate portals in ways that violate provider terms or bypass user confirmation.
-- Cloudflare is the approved runtime and data platform; GitHub is the canonical source-control, review, and CI system; Resend is the shared transactional email provider. Do not introduce Supabase, Appwrite, or Vercel into OtyaPoint or the approved ecosystem foundation unless the owner explicitly approves a documented exception. Avoid duplicate infrastructure just because a provider has a feature.
+- Cloudflare is the approved runtime and data platform; GitHub is the canonical source-control, review, and CI system; Resend is the shared transactional email provider. Do not introduce Supabase, Appwrite, or Vercel into OPoint or the approved ecosystem foundation unless the owner explicitly approves a documented exception. Avoid duplicate infrastructure just because a provider has a feature.
 - Keep product data domains separate: Otya identity does not automatically grant access to OmniPoint financial records, Otya Player private files, or another organisation's data.
 - Use per-organisation authorisation, least privilege, MFA for privileged users, immutable security audit records, rate limits, idempotency and revocation.
 - AI tools must use an allowlist, structured inputs, server-side permission checks and explicit confirmation for consequential changes. No arbitrary SQL/shell, unrestricted admin, secret retrieval, financial transfers or unattended production deploys.
@@ -165,7 +165,7 @@ Do not promise that any provider pays referral commission unless a real partner 
 - [ ] Usage caps, receipts, export, cancellation and support paths exist.
 - [ ] Production changes, deployments and financial actions are approval-gated and audited.
 - [ ] Core Otya Player local playback works without login or network.
-- [ ] Public OtyaHub resources remain public.
+- [ ] Public OHub resources remain public.
 
 ## 9. Success measures
 
