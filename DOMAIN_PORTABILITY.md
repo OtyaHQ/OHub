@@ -41,6 +41,7 @@ These are current deployment addresses, not permanent identities:
 | Surface | Current address |
 |---|---|
 | Public product site | `https://otya.site` |
+| API and mobile service gateway | `https://api.otya.site` |
 | Documentation and help | `https://docs.otya.site` |
 | Service status | `https://status.otya.site` |
 | Account and product space | `https://space.otya.site` |
@@ -56,6 +57,7 @@ Use the following names consistently across deployment configuration:
 - `OTYA_DOCS_HOSTS`
 - `OTYA_STATUS_HOSTS`
 - `OTYA_SPACE_HOSTS`
+- `OTYA_API_HOSTS`
 - `OTYA_ASSETS_HOSTS`
 - `OTYA_PUBLIC_URL`
 - `OTYA_SUPPORT_EMAIL`
