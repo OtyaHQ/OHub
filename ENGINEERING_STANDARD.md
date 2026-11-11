@@ -9,12 +9,12 @@ This document defines the shared engineering expectations for Otya products. It 
 
 | Product | Responsibility | Data boundary |
 | --- | --- | --- |
-| **Otya OS** | Shared product experience and platform conventions | Does not become a universal store for every product's private records |
+| **Otya ecosystem** | Shared product experience and platform conventions | Does not become a universal store for every product's private records |
 | **Otya End** | Shared identity, service contracts, integrations, notifications and platform operations | Owns only shared platform data and operational records |
-| **OtyaPoint** | Retail, inventory, staff, cash control and future agency operations | Business records and financial ledgers belong to OtyaPoint |
+| **OPoint** | Retail, inventory, staff, cash control and future agency operations | Business records and financial ledgers belong to OPoint |
 | **Omy Play** | Independent media and entertainment product | Core playback and private media stay device-local; optional connected features are explicitly scoped |
-| **Otya Next** | Private owner-facing intelligence and approved company operations | Owner context and privileged tools remain private |
-| **OtyaHub** | Public developer and partner information | Public documentation only; no secrets, private endpoints or customer records |
+| **O** | Private owner-facing intelligence and approved company operations | Owner context and privileged tools remain private |
+| **OHub** | Public developer and partner information | Public documentation only; no secrets, private endpoints or customer records |
 
 A shared Otya account does not grant automatic access to every product. Each product must enforce its own server-side authorization, tenant/business scope and permissions.
 
@@ -63,8 +63,8 @@ Prefer a small set of reusable services over duplicate Workers, databases or ven
 - Make focused pull requests with a clear problem statement, risk, tests and rollback note.
 - Require automated checks for linting, type checking, tests, dependency/security scanning and deployment configuration.
 - Pin high-impact GitHub Actions to reviewed immutable versions or commit SHAs.
-- Keep public OtyaHub documentation separate from private source, operational runbooks and infrastructure inventories.
-- Treat repository visibility as a security control: application/backend source and internal operational material should be private; OtyaHub is the intended public developer surface.
+- Keep public OHub documentation separate from private source, operational runbooks and infrastructure inventories.
+- Treat repository visibility as a security control: application/backend source and internal operational material should be private; OHub is the intended public developer surface.
 
 ## Reliability and acceptance
 
