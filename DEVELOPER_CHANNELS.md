@@ -6,7 +6,7 @@ Otya should use each external platform for one clear purpose.
 
 Use GitHub for source control, issues, pull requests, CI/CD evidence, public release metadata, security reporting and technical history.
 
-- `PeterSmartLink/OtyaPlayer`: application source while public; may become private later.
+- `PeterSmartLink/Omy Play`: application source while public; may become private later.
 - `PeterSmartLink/Otya-Server`: server/backend source while public; may become private later.
 - `PeterSmartLink/Otya`: stable public Otya hub, public automation, safe API examples and links to official product/help/trust surfaces.
 
