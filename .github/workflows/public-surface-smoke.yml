@@ -10,6 +10,7 @@ on:
       - 'README.md'
       - 'SECURITY.md'
       - 'BETA.md'
+      - 'postman/Otya-public.postman_collection.json'
       - 'news/**'
   pull_request:
     branches: [main]
@@ -19,6 +20,7 @@ on:
       - 'README.md'
       - 'SECURITY.md'
       - 'BETA.md'
+      - 'postman/Otya-public.postman_collection.json'
       - 'news/**'
   schedule:
     - cron: '17 5 * * *'
@@ -38,13 +40,13 @@ jobs:
         run: |
           set -euo pipefail
           urls=(
-            "https://petersmartlink.com"
-            "https://docs.petersmartlink.com"
-            "https://status.petersmartlink.com"
-            "https://space.petersmartlink.com"
-            "https://petersmartlink.com/privacy"
-            "https://petersmartlink.com/terms"
-            "https://petersmartlink.com/download/otya-player"
+            "https://otya.site"
+            "https://docs.otya.site"
+            "https://status.otya.site"
+            "https://space.otya.site"
+            "https://otya.site/privacy"
+            "https://otya.site/terms"
+            "https://otya.site/download/otya-player"
           )
 
           for url in "${urls[@]}"; do
@@ -67,7 +69,7 @@ jobs:
           test -f postman/Otya-public.postman_collection.json
           test -f SECURITY.md
           test -f .github/CODEOWNERS
-          grep -Fq 'support@petersmartlink.com' SECURITY.md
+          grep -Fq 'support@otya.site' SECURITY.md
           grep -Fq '* @PeterSmartLink' .github/CODEOWNERS
           grep -Fq '[Security and vulnerability reporting](SECURITY.md)' README.md
           ! grep -Fq 'petersmartlink.com/docs' README.md
@@ -78,8 +80,8 @@ jobs:
         run: |
           set -euo pipefail
           for url in \
-            "https://petersmartlink.com/latest" \
-            "https://petersmartlink.com/api/version"
+            "https://otya.site/latest" \
+            "https://otya.site/api/version"
           do
             echo "Checking $url"
             curl \
@@ -106,7 +108,7 @@ jobs:
             --max-time 15 \
             --retry 1 \
             --output /tmp/otya-turnstile.json \
-            "https://petersmartlink.com/api/security/turnstile/config"
+            "https://otya.site/api/security/turnstile/config"
           python3 - <<'PY'
           import json
           from pathlib import Path
