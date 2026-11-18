@@ -31,11 +31,14 @@ The programme is Cloudflare-first, GitHub-managed and designed to grow without t
 7. **Reviewable delivery.** Changes go through branches, pull requests, automated tests, security checks and explicit release gates.
 8. **Recoverability.** Production data changes require a backup/recovery plan, migration validation and a documented rollback path.
 
-## 4. Identity and account policy
+## 4. Target identity and account policy
 
-- Email one-time passcodes are the primary sign-in method.
+**This is the target policy, not a claim that every existing production client and Worker has already been migrated.** Each surface must pass the identity migration and live verification gates in Phase B before being described as compliant.
+
+- Email one-time passcodes are the target primary sign-in method.
 - Telegram may deliver an OTP only as an optional delivery channel after a user has securely linked the Telegram account.
-- Telegram Login, Telegram social sign-in and Telegram Mini App identity must not be treated as account authentication.
+- Telegram Login, Telegram social sign-in and Telegram Mini App identity must not create an Otya account session.
+- An already-linked Telegram identity may be used for a secondary owner-device confirmation only after the user has authenticated to Otya and passed the required email verification; it must never be the primary identity provider.
 - OTPs must be short-lived, rate-limited, single-use, protected against replay and excluded from logs.
 - Account email changes require verification of the new address and appropriate reauthentication.
 - Privileged owner and administrator actions require stronger authentication and an auditable approval trail.
