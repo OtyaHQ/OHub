@@ -11,7 +11,7 @@ This document defines the shared engineering expectations for Otya products. It 
 | --- | --- | --- |
 | **Otya ecosystem** | Shared product experience and platform conventions | Does not become a universal store for every product's private records |
 | **Otya End** | Shared identity, service contracts, integrations, notifications and platform operations | Owns only shared platform data and operational records |
-| **OPoint** | Retail, inventory, staff, cash control and future agency operations | Business records and financial ledgers belong to OPoint |
+| **Opoint** | Retail, inventory, staff, cash control and future agency operations | Business records and financial ledgers belong to Opoint |
 | **Omy Play** | Independent media and entertainment product | Core playback and private media stay device-local; optional connected features are explicitly scoped |
 | **O** | Private owner-facing intelligence and approved company operations | Owner context and privileged tools remain private |
 | **OHub** | Public developer and partner information | Public documentation only; no secrets, private endpoints or customer records |
