@@ -16,7 +16,7 @@ The programme is Cloudflare-first, GitHub-managed and designed to grow without t
 |---|---|---|
 | **Opoint** | Otya's own retail and mobile-money agency operations | Private company software for authorised Otya owners and workers; not a public SaaS or third-party business-verification service |
 | **Omy Play** | Local-first media player and media-library experience | Playback, scanning, search, transfers and Vault remain local-first and usable offline |
-| **Otya End** | Shared platform services | Identity, OTP delivery, shared API contracts, messaging and approved provider integrations; it does not become the owner of every product's business records |
+| **OEnd** | Shared platform services | Identity, OTP delivery, shared API contracts, messaging and approved provider integrations; it does not become the owner of every product's business records |
 | **O** | Private owner AI and technical coordination | Owner-only engineering and operations assistant; separated from customer-facing product experiences |
 | **OHub** | Public developer and partner documentation | Public architecture, onboarding, product guides and contribution standards; no secrets or private operating records |
 
@@ -90,11 +90,11 @@ Omy Play is a privacy-focused, local-first media application.
 - Firebase may support appropriate mobile attestation and notification services; it must not become the source of truth for product data.
 - Release builds require a verified application identity, real release-signing process, upgrade tests, ABI checks and artifact verification.
 
-## 7. Otya End shared platform requirements
+## 7. OEnd shared platform requirements
 
-Otya End provides shared services with narrow, documented contracts:
+OEnd provides shared services with narrow, documented contracts:
 
-- Otya ID authentication and OTP lifecycle.
+- OID authentication and OTP lifecycle.
 - Email delivery and optional linked Telegram OTP delivery.
 - Internal service-to-service authentication.
 - Product API routing and shared integration adapters.
@@ -139,7 +139,7 @@ O's memory and tool permissions stay separate from Opoint company data and Omy P
 
 **Acceptance:** one clear source of truth per product, no conflicting production-bound migrations, passing baseline CI and recoverable staging environments.
 
-### Phase B — Complete Otya ID and domain transition
+### Phase B — Complete OID and domain transition
 
 - Validate email OTP, optional linked Telegram OTP delivery, expiry, rate limits, replay prevention, refresh, logout and revocation.
 - Deploy and test isolated staging identity with dedicated staging-only credentials.
