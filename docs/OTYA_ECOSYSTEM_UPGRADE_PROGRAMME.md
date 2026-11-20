@@ -14,7 +14,7 @@ The programme is Cloudflare-first, GitHub-managed and designed to grow without t
 
 | Product | Responsibility | Boundary |
 |---|---|---|
-| **OtyaPoint** | Otya's own retail and mobile-money agency operations | Private company software for authorised Otya owners and workers; not a public SaaS or third-party business-verification service |
+| **Opoint** | Otya's own retail and mobile-money agency operations | Private company software for authorised Otya owners and workers; not a public SaaS or third-party business-verification service |
 | **Omy Play** | Local-first media player and media-library experience | Playback, scanning, search, transfers and Vault remain local-first and usable offline |
 | **Otya End** | Shared platform services | Identity, OTP delivery, shared API contracts, messaging and approved provider integrations; it does not become the owner of every product's business records |
 | **O** | Private owner AI and technical coordination | Owner-only engineering and operations assistant; separated from customer-facing product experiences |
@@ -44,9 +44,9 @@ The programme is Cloudflare-first, GitHub-managed and designed to grow without t
 - Privileged owner and administrator actions require stronger authentication and an auditable approval trail.
 - Product staging environments must use isolated identity bindings and staging-only credentials. Production identity must not be used as a shortcut for staging tests.
 
-## 5. OtyaPoint product requirements
+## 5. Opoint product requirements
 
-OtyaPoint is for Otya's own company operations. The first priority is the company's real retail and mobile-money agent work.
+Opoint is for Otya's own company operations. The first priority is the company's real retail and mobile-money agent work.
 
 ### Company and workforce model
 
@@ -101,7 +101,7 @@ Otya End provides shared services with narrow, documented contracts:
 - Provider callback verification, idempotency and status reconciliation.
 - Central security, monitoring and release conventions.
 
-Shared services must not bypass product authorization or directly mutate OtyaPoint financial records. Every product remains responsible for its own data and business rules.
+Shared services must not bypass product authorization or directly mutate Opoint financial records. Every product remains responsible for its own data and business rules.
 
 ## 8. O private owner-AI requirements
 
@@ -117,7 +117,7 @@ Its approved operating levels are:
 
 The model itself is never an authorization authority. It must not directly write financial tables, approve payments, grant staff access, reveal secrets, delete production resources or publish releases without the applicable human-approved release process.
 
-O's memory and tool permissions stay separate from OtyaPoint company data and Omy Play user data. Retrieved documents, customer messages and external content are untrusted input.
+O's memory and tool permissions stay separate from Opoint company data and Omy Play user data. Retrieved documents, customer messages and external content are untrusted input.
 
 ## 9. Domain, design and public surfaces
 
@@ -148,9 +148,9 @@ O's memory and tool permissions stay separate from OtyaPoint company data and Om
 
 **Acceptance:** all staging products use the isolated identity service; sign-in is email OTP based; Telegram sign-in is unavailable; canonical public hosts pass functional and security checks.
 
-### Phase C — Complete OtyaPoint
+### Phase C — Complete Opoint
 
-- Consolidate the new isolated OtyaPoint backend as the single product API and database model.
+- Consolidate the new isolated Opoint backend as the single product API and database model.
 - Integrate company branches, work-area assignments, separate Retail and Mobile Money permissions, staff onboarding, inventory, purchases, expenses and audit history.
 - Complete branch-scoped agency cash/float records and reporting without reusing Retail balances.
 - Complete sandbox-only provider adapters and reconciliation contracts.
@@ -188,7 +188,7 @@ O's memory and tool permissions stay separate from OtyaPoint company data and Om
 
 ## 11. Explicit non-goals and safety gates
 
-- No public third-party business-verification network or public SaaS for OtyaPoint in the first release.
+- No public third-party business-verification network or public SaaS for Opoint in the first release.
 - No unapproved real-money movement, live provider execution or financial service expansion.
 - No client-side authorization or direct browser writes to financial databases.
 - No cross-product sharing of private media, Vault content, business records or owner-AI memory.
