@@ -4,11 +4,11 @@ Product AI is optional and must remain separate from the private owner assistant
 
 ## Product-specific workspaces
 
-### OPoint Copilot
+### Opoint Copilot
 
-When explicitly enabled, OPoint Copilot may explain product features, summarize the signed-in user's own company/branch-scoped read models, help understand inventory and reconciliation status, and prepare reports.
+When explicitly enabled, Opoint Copilot may explain product features, summarize the signed-in user's own company/branch-scoped read models, help understand inventory and reconciliation status, and prepare reports.
 
-It must not initiate deposits, withdrawals, bill payments, airtime purchases, refunds, ledger postings, staff permission changes or any other financial write. A model response never changes the authoritative transaction state. Financial actions remain in OPoint's ordinary authenticated and approval-controlled workflows.
+It must not initiate deposits, withdrawals, bill payments, airtime purchases, refunds, ledger postings, staff permission changes or any other financial write. A model response never changes the authoritative transaction state. Financial actions remain in Opoint's ordinary authenticated and approval-controlled workflows.
 
 ### Omy Play Guide
 
@@ -36,7 +36,7 @@ The model is never the source of truth for identity, permissions, balances, play
 Product assistants retrieve only from versioned, approved sources such as:
 
 - OHub public product/developer documentation;
-- current OPoint and Omy Play Help content;
+- current Opoint and Omy Play Help content;
 - current Privacy and Terms where relevant;
 - verified release and known-issue information;
 - approved FAQs and support articles.
@@ -73,7 +73,7 @@ Memory is selective and optional, not a transcript dump.
 
 Potential user-selected preferences include language, playback behavior or explicitly saved app settings. Do not store passwords, OTPs, credentials, recovery material, raw Private media or unrelated device data as AI memory.
 
-Omy Play's local media and Private/Vault areas must remain on-device. OPoint Copilot context is tenant/branch-scoped and may never cross company boundaries. Owner memory for O must remain separate from both.
+Omy Play's local media and Private/Vault areas must remain on-device. Opoint Copilot context is tenant/branch-scoped and may never cross company boundaries. Owner memory for O must remain separate from both.
 
 ## Narrow tool permissions
 
@@ -88,7 +88,7 @@ Omy Play examples:
 - `get_app_version()` — read the installed app version;
 - `get_help(topic)` — retrieve canonical Help content.
 
-OPoint examples:
+Opoint examples:
 
 - `get_inventory_summary(company_id, branch_id)` — read an authorized summary;
 - `get_reconciliation_status(company_id, branch_id, session_id)` — read reconciliation state;

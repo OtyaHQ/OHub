@@ -32,12 +32,12 @@ Use only routes verified on the official domain. Do not publish guessed document
 ## Canonical product names
 
 - **Otya** — the umbrella brand for the connected ecosystem.
-- **OPoint** — the retail and business-operations application.
+- **Opoint** — the retail and business-operations application.
 - **Omy Play** — the local-first media application.
 - **O** — the private owner-AI application.
 - **OEnd** — shared backend, identity integration and service infrastructure.
 - **Otya ID** — shared account identity, email OTP and optional linked Telegram OTP delivery.
-- **Otya Control** — private administration and operations.
+- **OEnd** — private administration and operations.
 - **OHub** — this public developer and partner documentation surface.
 
 Product data and privileges remain isolated. OHub contains only intentionally public contracts, samples and guidance. It must never contain private operational inventories, credentials, signing material, personal data, customer financial data or owner-only AI tools.
