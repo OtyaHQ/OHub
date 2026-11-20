@@ -1,3 +1,5 @@
+![Otya permanent mark](https://otya.site/otya-app-icon.webp)
+
 # OHub
 
 **OHub** is the public developer and partner entry point for the Otya ecosystem. It publishes public documentation, safe examples, product guidance and integration information—not private operations or administrative controls.
@@ -35,8 +37,8 @@ Use only routes verified on the official domain. Do not publish guessed document
 - **Opoint** — the retail and business-operations application.
 - **Omy Play** — the local-first media application.
 - **O** — the private owner-AI application.
-- **OEnd** — shared backend, identity integration and service infrastructure.
-- **Otya ID** — shared account identity, email OTP and optional linked Telegram OTP delivery.
+- **OEnd** — shared backend, service integration and infrastructure; it hosts the OID identity service.
+- **OID** — shared account identity, email OTP and optional linked Telegram OTP delivery.
 - **OEnd** — private administration and operations.
 - **OHub** — this public developer and partner documentation surface.
 
