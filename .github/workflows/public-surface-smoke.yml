@@ -80,7 +80,7 @@ jobs:
           for url in \
             "https://otya.site/latest" \
             "https://otya.site/api/version" \
-            "https://api.otya.site/omy-play/health"
+            "https://api.otya.site/api/omy-play/health"
           do
             echo "Checking $url"
             curl \
