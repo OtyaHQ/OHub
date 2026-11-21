@@ -59,3 +59,15 @@ The existing Cloudflare public asset host is `assets.otya.site`; the prior `bran
 - [ ] Retire old artwork references only after all checks pass.
 
 Never claim the rollout is complete based on asset upload alone. Record each surface as verified only after viewing the deployed result.
+
+
+## Live rollout status — 2026-11-21
+
+- The original owner-supplied ZIP was checksum-verified locally; its complete 41-file brand package is now preserved in the private Otya operations plugin, version **0.1.5**, under `assets/official-brand/v2/`.
+- The operating instructions now distinguish the four official identities and their exact destinations.
+- This repository, OEnd, Opoint, Omy Play and O have updated source-of-truth brand documentation.
+- The Cloudflare bucket still contains the previous `brand/otya/v4/` objects. The new `brand/otya/official/v2/` object set has **not** been uploaded or publicly hash-verified.
+- Existing website, email and application references have not been switched to the new URL family. This is intentional: references must not point to missing assets.
+- Google OAuth project branding, live website rendering, launcher icons and app splash screens remain unverified.
+
+Do not report the visual rollout as complete until the full official package has been uploaded to R2, each object's SHA-256 and public response have been verified, and each deployed product surface has been inspected.
