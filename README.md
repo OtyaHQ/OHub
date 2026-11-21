@@ -19,6 +19,7 @@ Use only routes verified on the official domain. Do not publish guessed document
 
 ## Operating documents
 
+- [Otya brand identity standard](BRAND_IDENTITY.md)
 - [Beta scope and acceptance](BETA.md)
 - [AI operating model](AI_OPERATING_MODEL.md)
 - [Product assistant boundaries](PRODUCT_ASSISTANTS.md)
@@ -39,7 +40,6 @@ Use only routes verified on the official domain. Do not publish guessed document
 - **O** — the private owner-AI application.
 - **OEnd** — shared backend, service integration and infrastructure; it hosts the OID identity service.
 - **OID** — shared account identity, email OTP and optional linked Telegram OTP delivery.
-- **O** — private owner intelligence and approved company actions.
 - **OHub** — this public developer and partner documentation surface.
 
 Product data and privileges remain isolated. OHub contains only intentionally public contracts, samples and guidance. It must never contain private operational inventories, credentials, signing material, personal data, customer financial data or owner-only AI tools.
