@@ -1,59 +1,88 @@
-# Otya developer and public channels
+# Otya company and developer presence
 
-Otya should use each external platform for one clear purpose.
+**Umbrella brand:** Otya  
+**GitHub developer organisation:** OtyaHQ  
+**Intended parent-company identity:** Otya Holdings Limited  
+**Tagline:** One ecosystem. Endless possibilities.  
+**Brand line:** Innovate | Connect | Grow.
 
-## GitHub
+Otya is the public umbrella identity for the connected ecosystem. OtyaHQ is its official GitHub development and engineering home. Otya Holdings Limited is the intended parent-company identity; do not describe it as incorporated, registered, or legally verified until that status has been confirmed.
 
-Use GitHub for source control, issues, pull requests, CI/CD evidence, public release metadata, security reporting and technical history.
+## GitHub organisation profile
 
-- `PeterSmartLink/Omy Play`: application source while public; may become private later.
-- `PeterSmartLink/OEnd`: server/backend source while public; may become private later.
-- `PeterSmartLink/Otya`: stable public Otya hub, public automation, safe API examples and links to official product/help/trust surfaces.
+Keep the organisation login `OtyaHQ` stable. Use the Otya umbrella identity—not a product logo—for the organisation's display name and profile artwork.
 
-The public Otya hub must never contain private source or production secrets just to obtain public-runner minutes.
+Recommended public profile values:
 
-## Postman
+- **Display name:** Otya
+- **Description:** Official development organisation for Otya — one connected ecosystem spanning business, media and AI.
+- **Website:** https://otya.site
+- **Public email:** Leave unset until an approved company-domain contact address is confirmed for public use.
+- **Location:** Publish only the company-approved location; do not expose a personal or shop address.
+- **Profile image:** Use the exact Otya master logo from the owner's official brand package. Do not substitute the O, Omy or Opoint product marks.
 
-Use Postman as the API testing and developer-experience layer.
+For the public organisation overview, create a public `.github` repository and put the approved organisation introduction at `profile/README.md`. Pin the existing core repositories rather than creating replacement repositories.
 
-Public workspace/collection:
-- public version/release endpoints;
-- public API examples that require no secret credentials;
-- public documentation and first-request examples when Otya exposes a supported developer API.
+## Repository map
 
-Private/internal workspace:
-- authentication flows;
-- account creation/recovery/deletion tests;
-- Next requests;
-- provider integrations;
-- admin/internal endpoints;
-- staging environments and test credentials.
+Use the existing repositories as the source of truth. Do not create duplicates merely to change slug casing or product presentation.
 
-Never publish real access tokens, refresh tokens, service secrets, user data or production admin requests in a public Postman workspace.
+| Repository | Responsibility |
+|---|---|
+| [OHub](https://github.com/OtyaHQ/OHub) | Public developer and partner documentation; safe public examples and ecosystem guidance |
+| [OEnd](https://github.com/OtyaHQ/OEnd) | Shared backend, integrations and service layer; hosts OID identity services |
+| [O](https://github.com/OtyaHQ/O) | Private owner-facing AI product and approved operational assistance |
+| [OPoint](https://github.com/OtyaHQ/OPoint) | Opoint retail, shop operations and mobile-money business application |
+| [Omy_Play](https://github.com/OtyaHQ/Omy_Play) | Omy Play local-first media application and its supporting backend |
 
-## LinkedIn
+The repository slugs are technical identifiers. Public product naming remains **Otya**, **Opoint**, **Omy Play**, **O**, **OEnd**, **OID**, **OHub** and **Otya OS**. Do not rename a repository or deployed service solely for visual consistency.
 
-Use LinkedIn primarily for Otya's professional/company presence and meaningful product/ecosystem announcements.
+## Platform responsibilities
 
-Good uses:
-- release milestones after they are actually released;
-- engineering/reliability lessons that do not expose security details;
-- company/product announcements;
-- partnerships and hiring when real;
-- links to permanent Otya website/newsroom posts.
+- **GitHub:** source control, code review, issues, pull requests, CI/CD evidence, release history and security reporting.
+- **Cloudflare:** Otya's preferred application runtime, data, storage, networking and edge security platform.
+- **Resend:** approved transactional email delivery. Keep provider credentials in managed secrets, never in source files.
+- **Website:** https://otya.site is the canonical public source for product information, support, policies and verified release information.
 
-Do not turn LinkedIn into Otya's source of truth. Product status, legal documents, downloads and support must remain on Otya-controlled surfaces.
+Publish a fact once at its canonical source, then link to it from other channels. Do not maintain conflicting copies of product status, policy or support information.
 
-A LinkedIn Developer application should only be created for a concrete integration need such as approved sign-in, member sharing, or an approved organization/community-management integration. Do not request broad LinkedIn permissions simply because they are available.
+## Other public channels
 
-## Telegram
+- **LinkedIn:** company presence, verified milestones, product announcements, partnerships and genuine hiring.
+- **Telegram:** community updates and discussion. Link permanent information back to Otya-controlled sources.
+- **Postman:** public collections only for supported APIs and examples that require no private credentials. Keep authentication, administration, provider operations and internal environments private.
 
-Use Telegram for community updates, quick announcements and discussion. Permanent factual information should link back to the official Otya website/help/trust pages.
+Create external developer or social integrations only for a real, approved use case. Do not request broad permissions simply because a platform offers them.
 
-## Website
+## Security and company controls
 
-The website is Otya's canonical public source of truth for product information, downloads, Help, Privacy, Terms, account-deletion information and service/trust information.
+- Require two-factor authentication for every human account with organisation access.
+- Keep organisation ownership limited to trusted company administrators; grant repository access by least privilege.
+- Protect `main` branches against force-pushes and deletion. Keep deployment authorization and production environment approvals explicit.
+- Use GitHub Actions permissions with least privilege and store deployment credentials only as managed repository or environment secrets.
+- Review repository visibility before publishing source, workflows, artifacts or packages.
+- Never commit API keys, tokens, signing material, service-account files, private endpoints, customer records, financial data or recovery codes.
+- Do not expose internal infrastructure inventories or owner-only AI controls in OHub.
+- Treat a successful CI run as validation evidence, not proof that a production deployment or device release is complete.
 
-## Rule
+## Brand and public-trust rules
 
-Publish once as the factual source; adapt the message for each channel. Do not maintain five conflicting versions of the same fact.
+The owner's `Otya_Complete_Ecosystem_Logos_v2.zip` and its `WHERE_TO_USE_GUIDE.txt` remain the permanent visual source of truth.
+
+- Use the Otya master artwork for the organisation and parent-brand presence.
+- Use the four-dot O mark only for the AI product.
+- Use Omy artwork only for Omy Play.
+- Use Opoint artwork only for Opoint retail and mobile-money surfaces.
+- Do not redraw, recolour, crop, distort or replace supplied artwork.
+- Do not display a legal-registration, domain-verification or GitHub-verified claim until it has actually been completed and checked.
+
+## Official links
+
+- Otya: https://otya.site
+- OtyaHQ on GitHub: https://github.com/OtyaHQ
+- OHub developer hub: https://github.com/OtyaHQ/OHub
+- OEnd: https://github.com/OtyaHQ/OEnd
+- Opoint: https://github.com/OtyaHQ/OPoint
+- Omy Play: https://github.com/OtyaHQ/Omy_Play
+- O: https://github.com/OtyaHQ/O
+
