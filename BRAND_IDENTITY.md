@@ -25,7 +25,7 @@ Public base: https://assets.otya.site/brand/otya/v4/
 
 - Master lockup: `otya-master-lockup.webp` (560 × 208), including the full “Developed by OtyaHQ” credit.
 - Orbital mark: `otya-orbital-mark.webp` (240 × 183).
-- Product strip: `otya-product-strip.webp` (560 × 100).
+- Product strip: `otya-product-strip.webp` (560 × 100), archival reference only because its labels predate current product names.
 - Company footer: `otya-company-footer.webp` (560 × 85).
 - Product icon crops: `icons/opoint.webp`, `icons/omy-play.webp`, `icons/otya-os.webp`, `icons/ohub.webp`, `icons/oid.webp`.
 
@@ -53,7 +53,7 @@ Use the exact product icon crop and exact tagline for each product. Keep technic
 
 ## Usage rules
 
-1. Use the master lockup, product strip and company footer crops for presentations; the full original PNG remains the source reference.
+1. Use the master lockup and company footer crops for presentations. Use individual exact product icon crops with current product names and taglines. The original product-strip crop is archival reference only because its labels predate current product names.
 2. Use the master lockup for Otya wordmark placements.
 3. Use the orbital mark for compact master-brand placements.
 4. Use each exact product crop for its corresponding product.
