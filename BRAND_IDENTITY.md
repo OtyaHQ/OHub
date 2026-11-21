@@ -1,15 +1,13 @@
 # Otya Brand Identity Standard
 
-**Status:** Approved artwork; Cloudflare web assets uploaded; product rollout pending  
-**Brand owner:** Otya Holdings Limited (use legal name only as supported by current registration records)  
+**Status:** Approved artwork; Cloudflare web assets uploaded; product rollout in progress  
+**Brand owner:** Otya Holdings Limited  
 **Developer identity:** OtyaHQ  
 **Umbrella brand:** Otya
 
-## Canonical visual source — do not reinterpret
+## Canonical visual source
 
-The owner-approved image supplied in this project is the single source of truth for the Otya master logo and visual identity. Preserve it exactly as shown.
-
-Preserve the supplied artwork's orbital O symbol, sweep/orbit, floating squares, original Otya lettering, proportions, navy/blue/cyan/turquoise gradients, tagline, brand line, developer credit, product icon artwork and corporate footer.
+The owner's supplied Otya banner is the single visual source of truth. Preserve its orbital symbol, original Otya wordmark lettering, proportions, navy/blue/cyan/turquoise gradients, tagline, brand line, developer credit, product icon artwork and corporate footer exactly.
 
 Exact wording in the supplied artwork:
 - **Otya**
@@ -19,59 +17,63 @@ Exact wording in the supplied artwork:
 - **Otya Holdings Limited**
 - **Powering a smarter, more connected world.**
 
-**Forbidden:** redrawing the symbol, substituting a font for the wordmark, inventing SVG approximations, changing gradients, recolouring, altering proportions, or treating the full banner as a substitute for each separate product icon.
+Do not redraw the symbol, substitute a wordmark font, invent SVG approximations, recolour, change gradients, alter proportions or redesign product icons.
 
-## Cloudflare artwork assets
+## Approved Cloudflare artwork
 
-Uploaded and verified in the otya-assets R2 bucket under brand/otya/v4/:
-- otya-full-artwork.webp — complete artwork, web-optimized (560 × 373).
-- otya-master-lockup.webp — master logo and tagline crop (560 × 179).
-- otya-product-strip.webp — product icons and labels crop (560 × 100).
-- otya-company-footer.webp — company footer crop (560 × 85).
+Public base: https://assets.otya.site/brand/otya/v4/
 
-These are source-derived, compressed/resized WebP derivatives. The untouched 1536 × 1024 original PNG has not yet been uploaded. The Cloudflare brand guide and manifests identify the current asset set. Do not describe the WebP derivatives as the untouched original file.
+- Full artwork: `otya-full-artwork.webp` (560 × 373).
+- Master lockup: `otya-master-lockup.webp` (560 × 179).
+- Orbital mark: `otya-orbital-mark.webp` (240 × 183).
+- Product strip: `otya-product-strip.webp` (560 × 100).
+- Company footer: `otya-company-footer.webp` (560 × 85).
+- Product icon crops: `icons/opoint.webp`, `icons/omy-play.webp`, `icons/otya-os.webp`, `icons/ohub.webp`, `icons/oid.webp`.
 
-## Master identity
+These are source-derived, web-optimized WebP assets. The untouched 1536 × 1024 original PNG has not yet been uploaded.
 
-- Primary wordmark: **Otya**
-- Brand promise: **One ecosystem. Endless possibilities.**
-- Brand line: **Innovate | Connect | Grow**
-- Corporate descriptor shown in the artwork: **Otya Holdings Limited**
-- Developer credit shown in the artwork: **Developed by OtyaHQ**
+## Palette
+
+- Navy: **#08265C**
+- Royal blue: **#1677FF**
+- Cyan: **#00BDEB**
+- Turquoise: **#14C7B8**
+- White: **#FFFFFF**
 
 ## Product naming and technical boundaries
 
-The supplied image is the visual reference. Current product/repository identities remain governed by the current product architecture and must not be silently renamed just because a concept-era banner displays an earlier label.
+The banner is the visual source. Current product and repository identities remain governed by the current architecture and must not be silently renamed based only on earlier banner labels.
 
-- **Opoint** — retail and business-operations application.
-- **Omy Play** — local-first media application.
-- **Otya OS** — unified platform and shared experience.
-- **OEnd** — shared backend and integration layer; internal service identity.
-- **OID** — shared account identity and security service.
+- **Opoint** — retail and business operations.
+- **Omy Play** — media.
+- **Otya OS** — unified platform.
+- **OEnd** — shared backend and integration layer.
+- **OID** — identity and security service.
 - **OHub** — public developer and partner documentation.
-- **O** — private owner intelligence application.
+- **O** — private owner intelligence.
 
-Where product marks are required, use the exact product icon artwork from the uploaded product strip where represented, while retaining current product names and technical boundaries.
+Use the exact product icon crops where applicable while retaining current product and technical identities.
 
-## Asset rules
+## Usage rules
 
-1. Use the uploaded source-derived artwork assets; do not redraw them.
-2. Keep original lettering, gradients, proportions and visual character.
-3. Use full artwork for company/brand presentations and crops for suitable placements.
-4. Never use a low-resolution preview as a substitute for the full-resolution original master.
-5. Do not replace application logos, favicons, websites or emails until their actual asset references are updated and verified.
-6. Keep technical identifiers stable unless a reviewed migration explicitly changes them.
+1. Use the full artwork for company and brand presentations.
+2. Use the master lockup for Otya wordmark placements.
+3. Use the orbital mark for compact master-brand placements.
+4. Use each exact product crop for its corresponding product.
+5. Never use the full banner as a square icon or substitute one product's icon for another.
+6. Do not use low-resolution previews as the full-resolution master.
+7. Keep technical identifiers stable unless a reviewed migration explicitly changes them.
 
-## Corporate and legal accuracy
+## Legal accuracy
 
-Use **Otya Holdings Limited** as the parent-company wording in the approved visual identity, but do not claim incorporation, trademark registration, certification, product release or payment-service approval unless independently verified in the relevant official records.
+Do not claim incorporation, trademark registration, certification, product release or payment-service approval unless independently verified in the relevant official records.
 
 ## Deployment status
 
-- Approved artwork and three source-derived visual crops are uploaded to Cloudflare R2 v4 and verified by object listing.
-- The previous generated SVG approximations in the Cloudflare v4 folder have been removed.
-- The OHub README no longer displays the obsolete logo image and links to this standard.
-- The untouched full-resolution original PNG has not yet been uploaded.
-- Application and website logo replacements have not yet been deployed or verified.
+- Cloudflare v4 full artwork, master lockup, orbital mark, product strip, company footer and five product icon crops are uploaded and verified.
+- Rejected generated SVG approximations have been removed from the v4 folder.
+- OHub documentation no longer embeds the obsolete logo.
+- OEnd website metadata and authentication email source now reference approved Cloudflare artwork; its deployment/build still needs verification.
+- The untouched full-resolution PNG and offline app-bundled icon replacements remain pending.
 
-Do not report the brand rollout as complete until application references are updated and each affected surface is checked.
+Do not report the ecosystem branding rollout as complete until the actual website and app surfaces are updated and verified.
