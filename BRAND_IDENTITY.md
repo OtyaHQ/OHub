@@ -69,10 +69,10 @@ Do not claim incorporation, trademark registration, certification, product relea
 
 ## Deployment status
 
-- Cloudflare v4 full artwork, master lockup, orbital mark, product strip, company footer and five product icon crops are uploaded and verified.
-- Rejected generated SVG approximations have been removed from the v4 folder.
+- Cloudflare v4 master lockup (including the complete developer credit), orbital mark, master icons, product strip, company footer and product icon crops are uploaded and verified.
+- Rejected generated SVG approximations and legacy v1 AI/product-preview artwork have been removed from the asset bucket.
 - OHub documentation no longer embeds the obsolete logo.
-- OEnd website metadata and authentication email source now reference approved Cloudflare artwork; its deployment/build still needs verification.
-- The untouched full-resolution PNG and offline app-bundled icon replacements remain pending.
+- OEnd website navigation, product pages, metadata, social-card generator and authentication email source now reference approved artwork; production build and deployment still need verification.
+- Omy Play app assets, product icon and theme updates are committed; build/test verification remains pending. Otya Next owner UI uses the approved Cloudflare lockup and orbital mark; its launcher icon remains pending. Opoint brand rules are documented, but its customer-facing app surfaces are not yet implemented. The untouched full-resolution PNG is not uploaded.
 
 Do not report the ecosystem branding rollout as complete until the actual website and app surfaces are updated and verified.
