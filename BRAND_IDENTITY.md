@@ -1,7 +1,7 @@
 # Otya Brand Identity Standard
 
 **Status:** Approved artwork; Cloudflare web assets uploaded; product rollout in progress  
-**Brand owner:** Otya Holdings Limited  
+**Brand owner:** Otya (intended parent entity: Otya Holdings Limited; registration is in progress)  
 **Developer identity:** OtyaHQ  
 **Umbrella brand:** Otya
 
@@ -39,19 +39,17 @@ These are source-derived, web-optimized WebP assets. The untouched 1536 × 1024 
 - Turquoise: **#14C7B8**
 - White: **#FFFFFF**
 
-## Product naming and technical boundaries
+## Current product names and taglines
 
-The banner is the visual source. Current product and repository identities remain governed by the current architecture and must not be silently renamed based only on earlier banner labels.
-
-- **Opoint** — retail and business operations.
-- **Omy Play** — media.
-- **Otya OS** — unified platform.
+- **Opoint** — **Shop. Pay. More.** Retail and business operations.
+- **Omy Play** — **Watch. Enjoy.** Media.
+- **Otya OS** — **Your Smart Platform.** Unified platform.
+- **OHub** — **Build Together.** Public developer and partner community.
+- **OID** — **Secure Always.** Identity and security service.
 - **OEnd** — shared backend and integration layer.
-- **OID** — identity and security service.
-- **OHub** — public developer and partner documentation.
 - **O** — private owner intelligence.
 
-Use the exact product icon crops where applicable while retaining current product and technical identities.
+Use the exact product icon crop and exact tagline for each product. Keep technical identifiers stable unless a reviewed migration explicitly changes them.
 
 ## Usage rules
 
