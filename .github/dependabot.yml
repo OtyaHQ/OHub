@@ -8,5 +8,3 @@ updates:
       time: "05:50"
       timezone: "Africa/Kampala"
     open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
