@@ -201,3 +201,159 @@ O's memory and tool permissions stay separate from Opoint company data and Omy P
 The ecosystem is considered upgraded only when each product independently satisfies its acceptance criteria, integrations are verified end-to-end, access boundaries are tested, production data is recoverable, public surfaces use canonical branding, and each production release has a recorded owner approval and live verification result.
 
 A product may be complete for its current approved scope while another product remains in staging. The programme must report those states honestly rather than describing the entire ecosystem as live.
+
+## 13. Platform excellence, performance and Otya Control
+
+This section defines the target operating standard for the ecosystem. These are acceptance requirements, not claims that every control or measurement is already deployed.
+
+### Target service topology
+
+Keep one authoritative owner for each responsibility. Shared services provide narrow contracts; they must not become a second copy of every product backend.
+
+```mermaid
+flowchart TB
+  People[Customers, staff and owner] --> Edge[Cloudflare edge: DNS, TLS, WAF, bot controls]
+  Edge --> Web[Otya public web and product surfaces]
+  Web --> Gateway[OEnd shared API and integration gateway]
+  Gateway --> Identity[OID: identity, OTP, sessions]
+  Gateway --> Opoint[Opoint: company and financial records]
+  Gateway --> Omy[Omy Play: optional account and sync services]
+  Gateway --> OwnerAI[O: private owner AI and approved tools]
+  Control[Otya Control: private operations console] --> Gateway
+  Control --> Telemetry[Read-only health, deployment and incident views]
+  Gateway --> Async[Queues and durable workflows]
+  Async --> Providers[Approved email, notification and provider adapters]
+  Source[GitHub: source, CI, review and releases] --> Deploy[Guarded deployment pipeline]
+  Deploy --> Edge
+  Hub[OHub: public developer documentation] --> People
+```
+
+Otya Control is the private operational surface, not a new product database or a replacement for O. O coordinates approved reasoning and tasks; Control presents operational state and guarded controls. Both remain subject to server-side identity, scoped permissions and human approval for sensitive actions.
+
+### Cloudflare and platform responsibilities
+
+- **Workers:** application logic and small, clearly owned service boundaries. Prefer service bindings for internal calls instead of exposing additional public endpoints.
+- **D1:** transactional records owned by the relevant product. Keep identity, retail, agency, media-account and owner-operation data within their defined boundaries.
+- **R2:** object storage for product assets and recovery artefacts. Define retention, access, integrity verification and restore procedures per bucket.
+- **Queues:** asynchronous work with bounded batches, retry limits, idempotent consumers and dead-letter handling.
+- **Workflows:** multi-step operations that need durable progress, waits, retries or resumability.
+- **KV:** read-heavy configuration and cache-like data only where its consistency model is suitable; do not use it as a substitute for transactional records.
+- **Durable Objects:** introduce only where a concrete per-entity coordination or strongly ordered shared-state requirement exists.
+- **Turnstile, WAF, rate limiting and Access:** apply at the relevant public or private boundary. Rules must be scoped to the actual route and traffic pattern, tested for false positives and monitored after rollout.
+
+Do not add a Cloudflare product merely because it exists. Each binding, database, queue, namespace, Worker and public route must have a named owner, purpose, environment and lifecycle. Consolidate only after confirming references, data, bindings, traffic and recovery requirements.
+
+### Security and privacy baseline
+
+- Require server-side authorization on every protected action and every product-owned data query. The browser, mobile client and AI model are never authorization authorities.
+- Use distinct service identities, least-privilege credentials and narrow scopes. Keep secrets in managed secret storage, never in source, client bundles, logs or public documentation.
+- Protect owner and administrator access with strong authentication, reauthentication for sensitive operations, session revocation and auditable approvals.
+- Apply rate limits by endpoint and abuse model. Use bot challenges where appropriate, not as a substitute for application authorization.
+- Maintain an application-owned Content Security Policy. Avoid conflicting or duplicated header ownership between the edge and application.
+- Log security and operational events with request correlation while excluding passwords, OTPs, bearer tokens, raw message bodies and unnecessary personal data.
+- Review dependency and source security findings on every release. Critical and high-severity findings must be fixed or explicitly risk-accepted by the authorised owner before production.
+- Strengthen email-domain authentication progressively. Move DMARC enforcement only after reviewing aggregate reports and confirming all legitimate senders are aligned.
+- Maintain tested backup, restore, retention, export and account-deletion procedures for each data-owning service.
+
+### Performance and efficiency baseline
+
+Measure first, then optimize against repeatable baselines. Separate synthetic measurements from real-user and real-device measurements.
+
+**Web experience**
+- Target Core Web Vitals at the 75th percentile: LCP at or below 2.5 seconds, INP at or below 200 milliseconds and CLS at or below 0.1.
+- Establish page-level budgets for JavaScript, CSS, fonts, image bytes and third-party scripts.
+- Use responsive images, modern formats, explicit dimensions, lazy loading below the fold and preloading only for critical resources.
+- Cache fingerprinted static assets for long periods. Keep authenticated pages, account responses, private APIs and financial data out of shared public caches.
+- Test mobile, slow-network and reduced-motion behaviour rather than optimizing only for a desktop connection.
+
+**APIs and data**
+- Record p50, p95 and p99 latency by route and dependency, plus error rate, timeout rate and request volume.
+- Set service-specific latency budgets only after collecting a representative baseline. Avoid one global target that hides a slow or high-risk endpoint.
+- Review D1 query plans and indexes for high-volume paths. Avoid N+1 queries, repeated lookups and unnecessary full-table scans.
+- Bound payload size, pagination, concurrency, retries and downstream subrequests.
+- Move non-interactive work to queues or durable workflows where doing so improves user response time without weakening consistency.
+- Add caching only where invalidation, privacy and consistency are understood.
+
+**Mobile and local-first behaviour**
+- Measure cold start, warm start, frame timing, memory, battery use, storage growth, scan time, large-library behaviour and network consumption on representative devices.
+- Keep Omy Play's core local playback and media management independent of account or cloud availability.
+- Make sync, downloads, notifications and background work resilient to interrupted connectivity and Android lifecycle restrictions.
+
+### Stability, observability and recovery
+
+Every production service should expose a documented health/readiness contract and emit privacy-safe telemetry. The operational baseline includes:
+
+- Request volume, latency distributions, error rates and dependency health.
+- Worker exceptions and CPU/subrequest pressure where available.
+- D1 migration state, query errors and backup/restore readiness.
+- Queue backlog age, retry volume, poison messages and dead-letter counts.
+- Resend delivery, bounce, complaint and signed-webhook processing outcomes.
+- Authentication failures, abuse signals, session revocation and security-event trends.
+- Deployment version, release identity, configuration drift and rollback readiness.
+
+Use alerts that lead to an action. Deduplicate repeated incidents, include a runbook and owner, and distinguish a degraded dependency from a failed product. Define service-level indicators and error budgets for the critical services before adopting aggressive availability claims.
+
+Recovery requirements:
+1. Export or otherwise protect affected production data before a schema or high-impact configuration change.
+2. Validate migration ordering, integrity constraints and application compatibility before deployment.
+3. Keep a tested rollback or forward-repair plan; database rollback must not be assumed safe for every migration.
+4. Rehearse restores in an isolated environment and verify application-level integrity, not only that a backup file exists.
+5. After deployment, verify the exact Worker version, bindings, migrations and public authenticated flows.
+6. Stop the rollout when a gate fails. Do not deploy downstream components after a shared dependency fails its gate.
+
+### Usability, accessibility and trust
+
+- Apply the approved Otya brand system consistently without altering the supplied master logo artwork.
+- Provide predictable navigation, clear labels, visible focus, keyboard operation, readable contrast and accessible status announcements.
+- Aim for WCAG 2.2 AA across public and account experiences.
+- Every important flow must have clear loading, success, empty, validation, pending, retry, offline, permission-denied and recovery states.
+- Explain why a user is being asked for information or permission. Do not silently collect optional telemetry or upload local/private data.
+- Make notifications actionable and appropriately prioritised; avoid repeated or redundant alerts.
+- Keep language, naming, dates, currencies and support routes consistent across products.
+
+### Otya Control — private ecosystem operations console
+
+Build Otya Control in stages, starting read-only. It should consolidate approved operational evidence without becoming a privileged shortcut around product boundaries.
+
+**Read-only foundation**
+- Product and service inventory, owners, environments and dependencies.
+- Current deployed versions and the matching GitHub commit/release.
+- Workflow history, validation failures and deployment outcomes.
+- Cloudflare Worker, domain, route and binding inventory.
+- D1 migration and backup/restore readiness.
+- Queue backlog, retry and dead-letter status.
+- Resend delivery and webhook processing summaries.
+- Incidents, recovery state, service health and performance indicators.
+
+**Guarded operations**
+- Show a precise action preview, target environment, affected resources and expected impact before execution.
+- Require a separately authenticated operator and explicit approval for production deployments, migrations, permission changes, secret rotation and destructive operations.
+- Use idempotency keys and immutable audit events for supported actions.
+- Enforce product-specific authorization in the owning service. The console must not write directly to financial or identity tables.
+- Provide cancellation and rollback only where the underlying operation supports them safely.
+- Keep an emergency break-glass path separately controlled, logged and reviewed.
+
+**Definition of readiness**
+- All displayed health and deployment states link to authoritative evidence and show when they were last refreshed.
+- A green CI run is not labelled a live production deployment.
+- No secret values, raw authentication tokens or unnecessary customer content are displayed.
+- Read-only access remains useful when action permissions are unavailable.
+- A failed or partially completed action is shown as such; the console never reports success before the underlying service confirms it.
+
+### Programme-level acceptance gates
+
+| Dimension | Acceptance requirement |
+|---|---|
+| Web performance | Core Web Vitals targets measured at the 75th percentile |
+| API performance | Route-level p50/p95/p99 baseline and agreed budget |
+| Security | No unresolved critical/high release finding without documented owner risk acceptance |
+| Access control | Automated tests for role, tenant, branch and product boundaries |
+| Data safety | Verified backup and successful isolated restore rehearsal for critical data |
+| Reliability | Health checks, meaningful alerts, runbooks and tested recovery paths |
+| Delivery | Every production release tied to a reviewed commit, migration state and live smoke evidence |
+| Cost and complexity | Every infrastructure resource has an owner and purpose; duplicate resources are retired only after dependency and data checks |
+| User experience | Accessibility, responsive, offline/error-state and real-device acceptance |
+| Operations console | Read-only evidence first; sensitive actions require server-side authorization and explicit approval |
+
+These gates apply per product and per release. Do not mark the whole ecosystem complete until each enabled service has its own evidence.
+
