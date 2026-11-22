@@ -228,7 +228,7 @@ flowchart TB
   Hub[OHub: public developer documentation] --> People
 ```
 
-Otya Control is the private operational surface, not a new product database or a replacement for O. O coordinates approved reasoning and tasks; Control presents operational state and guarded controls. Both remain subject to server-side identity, scoped permissions and human approval for sensitive actions.
+Otya Control is the private operational capability and evidence layer behind O, not a second backend, data store or competing owner dashboard. The existing O Android application and its Company Workspace, Pulse, Activity and Connections surfaces remain the primary owner experience. O coordinates reasoning and approvals; Control provides governed operational evidence and deterministic APIs. A minimal browser recovery surface may be considered only for continuity when the mobile owner interface is unavailable, and must not duplicate normal owner workflows. Both remain subject to server-side identity, scoped permissions and human approval for sensitive actions.
 
 ### Cloudflare and platform responsibilities
 
