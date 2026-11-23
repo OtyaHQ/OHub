@@ -32,6 +32,15 @@ Use only routes verified on the official domain. Do not publish guessed document
 - [Otya ecosystem engineering standard](ENGINEERING_STANDARD.md)
 - [Security and vulnerability reporting](SECURITY.md)
 
+
+## GitHub organization profile and OHub
+
+OHub remains the public developer and partner documentation repository. It is not the GitHub organization profile repository and should not be renamed or repurposed as one.
+
+A separate repository named `.github` may host the OtyaHQ organization profile at `profile/README.md`, along with public community-health templates and carefully reviewed reusable workflows. That special repository complements OHub; it does not replace the public documentation hub.
+
+Keep OHub focused on public product documentation, safe API examples, partner guidance and release information. Keep the special `.github` repository focused on organization presentation and reusable public community assets. Neither public repository may contain private source, production credentials, internal infrastructure inventories, signing material or personal/customer data.
+
 ## Canonical product names
 
 - **Otya** — umbrella brand for the connected ecosystem.
