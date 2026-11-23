@@ -36,9 +36,9 @@ The programme is Cloudflare-first, GitHub-managed and designed to grow without t
 **This is the target policy, not a claim that every existing production client and Worker has already been migrated.** Each surface must pass the identity migration and live verification gates in Phase B before being described as compliant.
 
 - OID supports verified email/password and passwordless email-code sign-in. Configured TOTP and recovery codes provide second-factor protection.
-- Telegram is an optional destination for Otya notifications, announcements, product updates and events after explicit linking. It must never deliver sign-in, phone-verification, recovery, owner-device or MFA codes.
-- Telegram Login, Telegram social sign-in and Telegram Mini App identity must not create an Otya account session. OIDC/widget/Mini App validation can only attach a notification destination to an already authenticated Otya account.
-- Owner-device enrollment uses the OID verified-email code and a device-bound owner grant. Telegram is not part of owner access or elevated verification.
+- Telegram is an outbound communications channel for Otya announcements, public posts, product/release updates and event notices. Keep publication and notification delivery separate from identity and account control.
+- Telegram Login, Telegram social sign-in, Telegram account linking, Telegram OTP delivery and Telegram Mini App identity are not supported. Retired Telegram-auth endpoints must remain disabled; no Telegram chat ID, widget or Mini App payload may create or elevate an Otya account session.
+- Owner-device enrollment uses the OID verified-email code, the configured authenticator or a single-use recovery code, and a device-bound owner grant. Telegram is not part of owner access or elevated verification.
 - OTPs must be short-lived, rate-limited, single-use, protected against replay and excluded from logs.
 - Account email changes require verification of the new address and appropriate reauthentication.
 - Privileged owner and administrator actions require stronger authentication and an auditable approval trail.
