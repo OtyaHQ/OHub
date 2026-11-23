@@ -35,7 +35,7 @@ Use only routes verified on the official domain. Do not publish guessed document
 ## Canonical product names
 
 - **Otya** — umbrella brand for the connected ecosystem.
-- **Opoint** — retail and business-operations application.
+- **Opoint** — private internal company ERP, workforce, retail and agency-operations application for Otya only; not a public SaaS.
 - **Omy Play** — local-first media application.
 - **Otya OS** — unified platform and shared experience.
 - **O** — private owner-AI application.
