@@ -1,0 +1,106 @@
+name: Prune merged non-main branches
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/branch-cleanup.trigger'
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: safe-branch-prune-\${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Delete only branches already merged into main and not used by open PRs
+        shell: bash
+        env:
+          GH_TOKEN: \${{ github.token }}
+          GITHUB_REPOSITORY: \${{ github.repository }}
+        run: |
+          set -euo pipefail
+          repo="$GITHUB_REPOSITORY"
+          info="$(gh api "repos/$repo")"
+          default_branch="$(printf '%s' "$info" | jq -r '.default_branch // ""')"
+          if [[ "$default_branch" != "main" ]]; then
+            echo "Refusing cleanup: default branch is '$default_branch', not main."
+            exit 1
+          fi
+
+          marker="$(tr -d '\r\n' < .github/branch-cleanup.trigger)"
+          if [[ "$marker" != "PRUNE_MERGED_NON_MAIN_BRANCHES" ]]; then
+            echo "Refusing cleanup: marker value is not the safe merged-branch instruction."
+            exit 1
+          fi
+
+          git fetch --no-tags origin '+refs/heads/*:refs/remotes/origin/*'
+          protected="$(gh api --paginate --slurp "repos/$repo/branches?per_page=100" | jq -r '.[][] | select(.protected == true) | .name')"
+          open_pr_heads="$(gh api --paginate --slurp "repos/$repo/pulls?state=open&per_page=100" | jq -r --arg repo "$repo" '.[][] | select(.head.repo.full_name == $repo) | .head.ref')"
+
+          deleted=0
+          skipped_protected=0
+          skipped_open_pr=0
+          preserved_unmerged=0
+          skipped_moved=0
+
+          while IFS= read -r remote_ref; do
+            branch="${remote_ref#origin/}"
+            [[ -n "$branch" ]] || continue
+            [[ "$branch" == "HEAD" || "$branch" == "main" ]] && continue
+
+            if grep -Fxq -- "$branch" <<< "$protected"; then
+              echo "Preserved protected branch: $branch"
+              ((skipped_protected+=1))
+              continue
+            fi
+            if grep -Fxq -- "$branch" <<< "$open_pr_heads"; then
+              echo "Preserved branch used by an open pull request: $branch"
+              ((skipped_open_pr+=1))
+              continue
+            fi
+
+            ref="refs/remotes/origin/$branch"
+            if git merge-base --is-ancestor "$ref" refs/remotes/origin/main; then
+              expected_sha="$(git rev-parse "$ref")"
+              if git push "--force-with-lease=refs/heads/$branch:$expected_sha" origin ":refs/heads/$branch"; then
+                echo "Deleted already-merged branch: $branch"
+                ((deleted+=1))
+              else
+                echo "Preserved branch because its head changed or GitHub denied deletion: $branch"
+                ((skipped_moved+=1))
+              fi
+            else
+              echo "Preserved branch with commits not merged into main: $branch"
+              ((preserved_unmerged+=1))
+            fi
+          done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin)
+
+          git fetch --prune --no-tags origin '+refs/heads/*:refs/remotes/origin/*'
+          remaining="$(git for-each-ref --format='%(refname:short)' refs/remotes/origin | sed '/^origin\/HEAD$/d; /^origin\/main$/d')"
+          remaining_count="$(printf '%s\n' "$remaining" | sed '/^$/d' | wc -l | tr -d ' ')"
+
+          {
+            echo "## Safe branch cleanup"
+            echo
+            echo "- Deleted already-merged branches: $deleted"
+            echo "- Preserved protected branches: $skipped_protected"
+            echo "- Preserved open-PR branches: $skipped_open_pr"
+            echo "- Preserved branches with unmerged commits: $preserved_unmerged"
+            echo "- Preserved branches whose heads moved or could not be deleted: $skipped_moved"
+            echo "- Remaining non-main branches: $remaining_count"
+            echo
+            if [[ -n "$remaining" ]]; then
+              echo "### Remaining branch refs"
+              printf '%s\n' "$remaining"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
