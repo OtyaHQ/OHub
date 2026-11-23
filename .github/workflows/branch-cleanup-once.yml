@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - '.github/branch-cleanup.trigger'
+  schedule:
+    - cron: '17 3 * * 0'
 
 permissions:
   contents: write
@@ -38,7 +40,7 @@ jobs:
           fi
 
           marker="$(tr -d '\r\n' < .github/branch-cleanup.trigger)"
-          if [[ "$marker" != "PRUNE_MERGED_NON_MAIN_BRANCHES" ]]; then
+          if [[ "$marker" != "PRUNE_SAFE_NON_MAIN_BRANCHES" ]]; then
             echo "Refusing cleanup: marker value is not the safe merged-branch instruction."
             exit 1
           fi
@@ -46,6 +48,7 @@ jobs:
           git fetch --no-tags origin '+refs/heads/*:refs/remotes/origin/*'
           protected="$(gh api --paginate --slurp "repos/$repo/branches?per_page=100" | jq -r '.[][] | select(.protected == true) | .name')"
           open_pr_heads="$(gh api --paginate --slurp "repos/$repo/pulls?state=open&per_page=100" | jq -r --arg repo "$repo" '.[][] | select(.head.repo.full_name == $repo) | .head.ref')"
+          merged_pr_heads="$(gh api --paginate --slurp "repos/$repo/pulls?state=closed&per_page=100" | jq -r --arg repo "$repo" '.[][] | select(.merged_at != null and .head.repo.full_name == $repo) | [.head.ref, .head.sha] | @tsv')"
 
           deleted=0
           skipped_protected=0
@@ -70,17 +73,27 @@ jobs:
             fi
 
             ref="refs/remotes/origin/$branch"
+            expected_sha="$(git rev-parse "$ref")"
+            merged_sha="$(awk -F '\t' -v branch="$branch" -v expected="$expected_sha" '$1 == branch && $2 == expected { found = 1 } END { if (found) print expected }' <<< "$merged_pr_heads")"
+            reason=""
             if git merge-base --is-ancestor "$ref" refs/remotes/origin/main; then
-              expected_sha="$(git rev-parse "$ref")"
+              reason="commit is already contained in main"
+            elif [[ "$merged_sha" == "$expected_sha" ]]; then
+              reason="exact current head of a merged pull request"
+            elif git diff --quiet refs/remotes/origin/main "$ref"; then
+              reason="content tree is identical to main"
+            fi
+
+            if [[ -n "$reason" ]]; then
               if git push "--force-with-lease=refs/heads/$branch:$expected_sha" origin ":refs/heads/$branch"; then
-                echo "Deleted already-merged branch: $branch"
+                echo "Deleted safe branch ($reason): $branch"
                 ((deleted+=1))
               else
                 echo "Preserved branch because its head changed or GitHub denied deletion: $branch"
                 ((skipped_moved+=1))
               fi
             else
-              echo "Preserved branch with commits not merged into main: $branch"
+              echo "Preserved branch with unique content or unmerged commits: $branch"
               ((preserved_unmerged+=1))
             fi
           done < <(git for-each-ref --format='%(refname:short)' refs/remotes/origin)
@@ -92,7 +105,7 @@ jobs:
           {
             echo "## Safe branch cleanup"
             echo
-            echo "- Deleted already-merged branches: $deleted"
+            echo "- Deleted branches proven present in main or covered by merged PRs: $deleted"
             echo "- Preserved protected branches: $skipped_protected"
             echo "- Preserved open-PR branches: $skipped_open_pr"
             echo "- Preserved branches with unmerged commits: $preserved_unmerged"
