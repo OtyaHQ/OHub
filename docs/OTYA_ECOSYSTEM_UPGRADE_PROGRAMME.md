@@ -95,7 +95,7 @@ Omy Play is a privacy-focused, local-first media application.
 OEnd provides shared services with narrow, documented contracts:
 
 - OID authentication and OTP lifecycle.
-- Email delivery and authenticated Telegram notification-destination linking.
+- Email delivery for authentication; Telegram outbound publication and announcement delivery as a separate, non-identity communications transport.
 - Internal service-to-service authentication.
 - Product API routing and shared integration adapters.
 - Provider callback verification, idempotency and status reconciliation.
@@ -141,12 +141,12 @@ O's memory and tool permissions stay separate from Opoint company data and Omy P
 
 ### Phase B — Complete OID and domain transition
 
-- Validate email OTP, TOTP/recovery codes, expiry, rate limits, replay prevention, refresh, logout, revocation and Telegram notification linking without session issuance.
+- Validate email OTP, TOTP/recovery codes, expiry, rate limits, replay prevention, refresh and logout; verify Telegram announcement/event publishing independently, with no account linking or session issuance.
 - Deploy and test isolated staging identity with dedicated staging-only credentials.
 - Rebind product staging environments only after identity staging is healthy.
 - Complete canonical-domain application configuration and public HTTP/browser smoke tests.
 
-**Acceptance:** all staging products use the isolated identity service; sign-in is email OTP based; Telegram sign-in is unavailable; canonical public hosts pass functional and security checks.
+**Acceptance:** all staging products use the isolated identity service; sign-in uses verified email with configured TOTP/recovery; Telegram cannot be used for sign-in, account linking or OTP delivery; canonical public hosts pass functional and security checks.
 
 ### Phase C — Complete Opoint
 
