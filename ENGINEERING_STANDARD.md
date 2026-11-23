@@ -32,9 +32,9 @@ Prefer a small set of reusable services over duplicate Workers, databases or ven
 
 - Otya End is the shared identity authority.
 - Supported sign-in methods are approved email/password or other explicitly approved first-party methods.
-- One-time codes may be delivered by email and, where configured, an Otya-operated Telegram bot.
-- **Telegram Login, Telegram OAuth/OIDC, Telegram account login widgets and Telegram Mini App authentication are not approved sign-in methods.**
-- Telegram is a message/OTP transport only where a user has explicitly enrolled and the destination has been verified. A Telegram chat ID or bot interaction must not be treated as proof of account ownership by itself.
+- Sign-in and recovery codes are delivered through verified email. Authenticator-based TOTP and recovery codes are used for configured two-step verification.
+- **Telegram Login, Telegram OAuth/OIDC, Telegram account login widgets, Telegram account linking and Telegram Mini App authentication are not supported identity features.** The retired Telegram-auth endpoints must remain disabled.
+- Telegram is an outbound communications channel for Otya announcements, public posts, product/release updates and event notices. It must never deliver sign-in, phone-verification, recovery, owner-device, transaction or MFA codes. A Telegram chat ID, bot interaction or Mini App payload must never be treated as proof of account ownership.
 - OTPs must be short-lived, purpose-bound, rate-limited, single-use, protected at rest and invalidated after success or expiry.
 - Product roles, staff membership and owner privileges are verified server-side. Never trust client-supplied role flags.
 

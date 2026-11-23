@@ -35,10 +35,10 @@ The programme is Cloudflare-first, GitHub-managed and designed to grow without t
 
 **This is the target policy, not a claim that every existing production client and Worker has already been migrated.** Each surface must pass the identity migration and live verification gates in Phase B before being described as compliant.
 
-- Email one-time passcodes are the target primary sign-in method.
-- Telegram may deliver an OTP only as an optional delivery channel after a user has securely linked the Telegram account.
-- Telegram Login, Telegram social sign-in and Telegram Mini App identity must not create an Otya account session.
-- An already-linked Telegram identity may be used for a secondary owner-device confirmation only after the user has authenticated to Otya and passed the required email verification; it must never be the primary identity provider.
+- OID supports verified email/password and passwordless email-code sign-in. Configured TOTP and recovery codes provide second-factor protection.
+- Telegram is an outbound communications channel for Otya announcements, public posts, product/release updates and event notices. Keep publication and notification delivery separate from identity and account control.
+- Telegram Login, Telegram social sign-in, Telegram account linking, Telegram OTP delivery and Telegram Mini App identity are not supported. Retired Telegram-auth endpoints must remain disabled; no Telegram chat ID, widget or Mini App payload may create or elevate an Otya account session.
+- Owner-device enrollment uses the OID verified-email code, the configured authenticator or a single-use recovery code, and a device-bound owner grant. Telegram is not part of owner access or elevated verification.
 - OTPs must be short-lived, rate-limited, single-use, protected against replay and excluded from logs.
 - Account email changes require verification of the new address and appropriate reauthentication.
 - Privileged owner and administrator actions require stronger authentication and an auditable approval trail.
@@ -95,7 +95,7 @@ Omy Play is a privacy-focused, local-first media application.
 OEnd provides shared services with narrow, documented contracts:
 
 - OID authentication and OTP lifecycle.
-- Email delivery and optional linked Telegram OTP delivery.
+- Email delivery and authenticated Telegram notification-destination linking.
 - Internal service-to-service authentication.
 - Product API routing and shared integration adapters.
 - Provider callback verification, idempotency and status reconciliation.
@@ -141,7 +141,7 @@ O's memory and tool permissions stay separate from Opoint company data and Omy P
 
 ### Phase B — Complete OID and domain transition
 
-- Validate email OTP, optional linked Telegram OTP delivery, expiry, rate limits, replay prevention, refresh, logout and revocation.
+- Validate email OTP, TOTP/recovery codes, expiry, rate limits, replay prevention, refresh, logout, revocation and Telegram notification linking without session issuance.
 - Deploy and test isolated staging identity with dedicated staging-only credentials.
 - Rebind product staging environments only after identity staging is healthy.
 - Complete canonical-domain application configuration and public HTTP/browser smoke tests.

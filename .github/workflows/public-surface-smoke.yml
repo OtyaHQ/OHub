@@ -68,7 +68,7 @@ jobs:
           test -f SECURITY.md
           test -f .github/CODEOWNERS
           grep -Fq 'support@otya.site' SECURITY.md
-          grep -Fq '* @PeterSmartLink' .github/CODEOWNERS
+          grep -Fq '* @peterkatabira' .github/CODEOWNERS
           grep -Fq '[Security and vulnerability reporting](SECURITY.md)' README.md
           ! grep -Fq 'petersmartlink.com' README.md
           ! grep -Fq 'Online Music behavior that is already supported' BETA.md
