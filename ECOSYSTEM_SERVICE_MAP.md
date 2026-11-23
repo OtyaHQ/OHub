@@ -4,13 +4,13 @@ This page describes the intended roles of Otya products for developers, partners
 
 ## One connected ecosystem
 
-The Otya ecosystem is a connected family of products. **Opoint** is the public product name for the shop and business-operations experience. Each service has a clear responsibility; shared identity or navigation does not mean every product shares all data. Legal ownership and registration details are intentionally not stated on this product map.
+The Otya ecosystem is a connected family of products and internal services. **Omy Play is the only public software product for general public use. Opoint is private internal company software for Otya's own retail, workforce and agency operations; it is not a public SaaS or a self-service product for other companies.** Shared identity or navigation does not mean every service shares all data. Legal ownership and registration details are intentionally not stated on this product map.
 
 | Product/service | Public purpose | Integration principle |
 |---|---|---|
 | **Otya ecosystem** | Unified experience across the Otya family | Consistent identity, design and service discovery |
 | **Otya End** | Shared backend and integration layer | Common documented contracts with product-specific authorization |
-| **Opoint** | Business operations for the owner's shop, including retail and agency workflows | Financial operations require partner verification, reconciliation and appropriate controls |
+| **Opoint** | Private internal ERP, workforce, retail and agency operations for Otya only; not offered as a public SaaS | Restricted to authorised Otya personnel; financial execution remains gated behind partner approval and reconciliation |
 | **Omy Play** | Media and entertainment product for audio/video, private media and device-to-device sharing | Core playback remains useful offline; account/cloud features are optional |
 | **Leo / O** | Private owner-facing AI coordinator | Owner-only tools stay private and require server-side authorization |
 | **OHub** | Public developer and partner information | Publish safe docs, integration guidance and public release information |
