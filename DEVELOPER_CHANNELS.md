@@ -21,7 +21,7 @@ Recommended public profile values:
 - **Location:** Publish only the company-approved location; do not expose a personal or shop address.
 - **Profile image:** Use the exact Otya master logo from the owner's official brand package. Do not substitute the O, Omy or Opoint product marks.
 
-For the public organisation overview, create a public `.github` repository and put the approved organisation introduction at `profile/README.md`. Pin the existing core repositories rather than creating replacement repositories.
+The public `.github` repository now hosts the approved organisation introduction at `profile/README.md`. Keep that repository focused on public profile and community-health assets; pin existing public repositories rather than creating duplicates.
 
 ## Repository map
 
@@ -29,13 +29,13 @@ Use the existing repositories as the source of truth. Do not create duplicates m
 
 | Repository | Responsibility |
 |---|---|
-| [OHub](https://github.com/OtyaHQ/OWeb) | Public developer and partner documentation; safe public examples and ecosystem guidance |
-| [OEnd](https://github.com/OtyaHQ/OEnd) | Shared backend, integrations and service layer; hosts OID identity services |
-| [O](https://github.com/OtyaHQ/O) | Private owner-facing AI product and approved operational assistance |
-| [OPoint](https://github.com/OtyaHQ/OPoint) | Opoint retail, shop operations and mobile-money business application |
-| [Omy_Play](https://github.com/OtyaHQ/Omy_Play) | Omy Play local-first media application and its supporting backend |
+| [OHub (OWeb repository)](https://github.com/OtyaHQ/OWeb) | Public developer and partner documentation; safe public examples and ecosystem guidance |
+| [OEnd](https://github.com/OtyaHQ/OEnd) | Shared backend and integration source; currently public during active development |
+| [\.github](https://github.com/OtyaHQ/.github) | Public organisation profile and community-health assets |
 
 The repository slugs are technical identifiers. Public product naming remains **Otya**, **Opoint**, **Omy Play**, **O**, **OEnd**, **OID**, **OHub** and **Otya OS**. Do not rename a repository or deployed service solely for visual consistency.
+
+Private product and owner-source repositories are restricted to authorized collaborators and are not public developer integration targets. Do not publish private source links in this public channel guide. Opoint is the internal Otya workforce and business-operations application; it is not a public customer SaaS.
 
 ## Platform responsibilities
 
@@ -80,9 +80,7 @@ The owner's `Otya_Complete_Ecosystem_Logos_v2.zip` and its `WHERE_TO_USE_GUIDE.t
 
 - Otya: https://otya.site
 - OtyaHQ on GitHub: https://github.com/OtyaHQ
-- OHub developer hub: https://github.com/OtyaHQ/OWeb
-- OEnd: https://github.com/OtyaHQ/OEnd
-- Opoint: https://github.com/OtyaHQ/OPoint
-- Omy Play: https://github.com/OtyaHQ/Omy_Play
-- O: https://github.com/OtyaHQ/O
+- OHub developer hub (OWeb repository): https://github.com/OtyaHQ/OWeb
+- Otya organisation profile: https://github.com/OtyaHQ/.github
+- OEnd public development repository: https://github.com/OtyaHQ/OEnd
 
