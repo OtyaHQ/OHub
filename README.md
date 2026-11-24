@@ -1,6 +1,6 @@
 # OHub
 
-**OHub** is the public developer and partner entry point for the Otya ecosystem. It publishes public documentation, safe examples, product guidance and integration information—not private operations or administrative controls.
+**OHub** is the public developer and partner entry point for the Otya ecosystem. Its source repository is [`OtyaHQ/OWeb`](https://github.com/OtyaHQ/OWeb). OHub publishes public documentation, safe examples, product guidance and integration information—not private operations or administrative controls.
 
 > Otya master branding follows the owner-approved original artwork. See [the Otya brand identity standard](BRAND_IDENTITY.md). Do not use substitute or redrawn logos.
 
@@ -37,7 +37,7 @@ Use only routes verified on the official domain. Do not publish guessed document
 
 OHub remains the public developer and partner documentation repository. It is not the GitHub organization profile repository and should not be renamed or repurposed as one.
 
-A separate repository named `.github` may host the OtyaHQ organization profile at `profile/README.md`, along with public community-health templates and carefully reviewed reusable workflows. That special repository complements OHub; it does not replace the public documentation hub.
+A separate public repository named [`.github`](https://github.com/OtyaHQ/.github) now hosts the OtyaHQ organization profile at `profile/README.md`. Public community-health templates and reusable workflows may be added there after review. This special repository complements OHub; it does not replace the public documentation hub.
 
 Keep OHub focused on public product documentation, safe API examples, partner guidance and release information. Keep the special `.github` repository focused on organization presentation and reusable public community assets. Neither public repository may contain private source, production credentials, internal infrastructure inventories, signing material or personal/customer data.
 
