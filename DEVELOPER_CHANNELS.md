@@ -29,7 +29,7 @@ Use the existing repositories as the source of truth. Do not create duplicates m
 
 | Repository | Responsibility |
 |---|---|
-| [OHub](https://github.com/OtyaHQ/OHub) | Public developer and partner documentation; safe public examples and ecosystem guidance |
+| [OHub](https://github.com/OtyaHQ/OWeb) | Public developer and partner documentation; safe public examples and ecosystem guidance |
 | [OEnd](https://github.com/OtyaHQ/OEnd) | Shared backend, integrations and service layer; hosts OID identity services |
 | [O](https://github.com/OtyaHQ/O) | Private owner-facing AI product and approved operational assistance |
 | [OPoint](https://github.com/OtyaHQ/OPoint) | Opoint retail, shop operations and mobile-money business application |
@@ -80,7 +80,7 @@ The owner's `Otya_Complete_Ecosystem_Logos_v2.zip` and its `WHERE_TO_USE_GUIDE.t
 
 - Otya: https://otya.site
 - OtyaHQ on GitHub: https://github.com/OtyaHQ
-- OHub developer hub: https://github.com/OtyaHQ/OHub
+- OHub developer hub: https://github.com/OtyaHQ/OWeb
 - OEnd: https://github.com/OtyaHQ/OEnd
 - Opoint: https://github.com/OtyaHQ/OPoint
 - Omy Play: https://github.com/OtyaHQ/Omy_Play
