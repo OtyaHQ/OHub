@@ -7,6 +7,7 @@
 ## Public surface
 
 - Official ecosystem domain: https://otya.site
+- Official social channels: [TikTok](https://www.tiktok.com/@otyahq) · [YouTube](https://www.youtube.com/@otyahq) · [Instagram](https://www.instagram.com/otyahq/) · [X](https://x.com/otyahq)
 - News and public product updates: [Otya News](news/)
 - Security: [OHub security policy](SECURITY.md)
 - Developer and partner guidance: this repository
