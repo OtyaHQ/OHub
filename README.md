@@ -66,7 +66,7 @@ Product data and privileges remain isolated. OHub contains only intentionally pu
 
 Do not commit or print production credentials, API keys, signing material, tokens, service-account files, private source code, internal infrastructure inventories, private endpoints, administrative procedures, user data, crash payloads or account-recovery material.
 
-If application/server repositories become private later, OHub can remain the stable public developer hub. Public workflows must continue to operate only on public inputs unless a separately reviewed security design explicitly permits otherwise.
+As application and owner-source repositories transition to private, OHub remains the stable public developer hub and the separate `.github` repository hosts the public organisation profile. Public workflows in OWeb and `.github` must operate only on public inputs unless a separately reviewed security design explicitly permits otherwise.
 
 ## Release status
 
