@@ -46,6 +46,17 @@ Private product and owner-source repositories are restricted to authorized colla
 
 Publish a fact once at its canonical source, then link to it from other channels. Do not maintain conflicting copies of product status, policy or support information.
 
+## Official social channels
+
+The official Otya handle is **@otyahq** on TikTok, YouTube, Instagram and X. Use these owner-supplied channel links consistently in public bios, website footers, release announcements and cross-channel posts. Confirm control of each profile and its canonical URL before publishing or connecting automation.
+
+- TikTok: https://www.tiktok.com/@otyahq
+- YouTube: https://www.youtube.com/@otyahq
+- Instagram: https://www.instagram.com/otyahq/
+- X: https://x.com/otyahq
+
+Social accounts are communication and publishing channels only. They are not OID login providers, account-recovery methods or sources of trusted identity claims. Automated publishing, where supported and approved, must use provider-authorised credentials in managed secrets, least-privilege scopes, per-channel revocation, audit logs and an approval queue. Do not commit tokens or expose them to browser clients.
+
 ## Other public channels
 
 - **LinkedIn:** company presence, verified milestones, product announcements, partnerships and genuine hiring.
