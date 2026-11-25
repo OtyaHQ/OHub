@@ -40,18 +40,19 @@ OHub remains the public developer and partner documentation repository. It is no
 
 A separate public repository named [`.github`](https://github.com/OtyaHQ/.github) now hosts the OtyaHQ organization profile at `profile/README.md`. Public community-health templates and reusable workflows may be added there after review. This special repository complements OHub; it does not replace the public documentation hub.
 
-Keep OHub focused on public product documentation, safe API examples, partner guidance and release information. Keep the special `.github` repository focused on organization presentation and reusable public community assets. Neither public repository may contain private source, production credentials, internal infrastructure inventories, signing material or personal/customer data.
+Keep OHub focused on public product documentation, safe API examples, partner guidance and release information. OWeb is the separate public website and web application frontend; browser requests use OWeb's same-origin server routes, which communicate with OEnd privately. Keep the special `.github` repository focused on organization presentation and reusable public community assets. Neither public repository may contain private source, production credentials, internal infrastructure inventories, signing material or personal/customer data.
 
 ## Canonical product names
 
 - **Otya** — umbrella brand for the connected ecosystem.
+- **OWeb** — public Otya website and browser-facing web application frontend. OWeb owns website presentation and web experience; OEnd remains the backend.
 - **Opoint** — private internal company ERP, workforce, retail and agency-operations application for Otya only; not a public SaaS.
 - **Omy Play** — local-first media application.
 - **Otya OS** — unified platform and shared experience.
 - **O** — private owner-AI application.
 - **OEnd** — shared backend, service integration and infrastructure; it hosts the OID identity service.
 - **OID** — shared account identity, verified-email sign-in and authenticator security; Telegram is used for announcements, posts, product/release updates and events only.
-- **OHub** — this public developer and partner documentation surface.
+- **OHub** — this public developer and partner documentation surface. OHub documentation is distinct from the OWeb website application.
 
 Product data and privileges remain isolated. OHub contains only intentionally public contracts, samples and guidance. It must never contain private operational inventories, credentials, signing material, personal data, customer financial data or owner-only AI tools.
 
