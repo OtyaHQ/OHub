@@ -21,6 +21,8 @@ A shared Otya account does not grant automatic access to every product. Each pro
 
 ## Frontend and backend boundary
 
+Refer to the [canonical Otya architecture index](https://github.com/OtyaHQ/OEnd/blob/main/docs/architecture/README.md) for detailed routing, service ownership and migration decisions. This standard states the shared rules; the architecture index owns the detailed implementation map.
+
 - OWeb owns the public website, web UI, server-side rendering and browser-facing backend-for-frontend routes.
 - Browser JavaScript calls same-origin OWeb routes. The OWeb server uses a private Service Binding to OEnd; browsers do not call product Workers, databases, Resend or payment providers directly.
 - OEnd owns the backend API gateway at one public API hostname for native clients and approved external integrations. Internal product services are accessed through private Service Bindings.
