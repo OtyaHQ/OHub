@@ -9,11 +9,12 @@ The Otya ecosystem is a connected family of products and internal services. **Om
 | Product/service | Public purpose | Integration principle |
 |---|---|---|
 | **Otya ecosystem** | Unified experience across the Otya family | Consistent identity, design and service discovery |
-| **Otya End** | Shared backend and integration layer | Common documented contracts with product-specific authorization |
+| **OWeb** | Public Otya website and browser-facing web application frontend | Owns page rendering, navigation, accessibility, SEO and same-origin server routes; it does not own product data or privileged integrations |
+| **Otya End** | Backend-only API gateway and shared integration layer | Owns versioned API contracts, private service orchestration, webhooks and shared server-side capabilities; no public website UI |
 | **Opoint** | Private internal ERP, workforce, retail and agency operations for Otya only; not offered as a public SaaS | Restricted to authorised Otya personnel; financial execution remains gated behind partner approval and reconciliation |
 | **Omy Play** | Media and entertainment product for audio/video, private media and device-to-device sharing | Core playback remains useful offline; account/cloud features are optional |
 | **Leo / O** | Private owner-facing AI coordinator | Owner-only tools stay private and require server-side authorization |
-| **OHub** | Public developer and partner information | Publish safe docs, integration guidance and public release information |
+| **OHub** | Public developer and partner information | Publish safe docs, integration guidance and public release information; separate from the OWeb website app |
 | **Resend** | Transactional email delivery and event visibility | Email integration is server-side; secrets and private delivery payloads stay protected |
 | **Payment partners** | Approved provider rails for agency services | Provider adapters are replaceable; status is confirmed by trusted provider evidence, not UI optimism |
 
@@ -28,6 +29,14 @@ A service must not display a transaction as successful until the provider's trus
 ## Hybrid AI and automation
 
 Leo may coordinate cross-product health checks, repository changes, incident analysis, documentation, release preparation and approved workflows. Product data remains under the relevant product's authorization boundary. High-impact actions such as production releases, permission changes, destructive operations and money movement require explicit authorization and post-action verification.
+
+## Frontend and backend access
+
+- Web browsers call OWeb same-origin routes only; OWeb's server-side layer calls OEnd through a private Cloudflare Service Binding.
+- Native clients use one public API hostname and one versioned OEnd contract.
+- OEnd routes to OID and product-domain services privately. Product Workers and databases are not exposed to browsers.
+- Routine site content—navigation, page sections, product cards, announcements, FAQs, downloads and SEO metadata—should be versioned and published dynamically without a code deployment.
+- Website content editing must have validation, review/publish permissions, audit history, cache invalidation and rollback.
 
 ## Integration guidance for developers
 
