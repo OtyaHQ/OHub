@@ -32,6 +32,8 @@ Leo may coordinate cross-product health checks, repository changes, incident ana
 
 ## Frontend and backend access
 
+The canonical architecture index is maintained in [OEnd](https://github.com/OtyaHQ/OEnd/blob/main/docs/architecture/README.md). It is the source of truth for service boundaries, website extraction, API routing, identity integration and operational migration gates.
+
 - Web browsers call OWeb same-origin routes only; OWeb's server-side layer calls OEnd through a private Cloudflare Service Binding.
 - Native clients use one public API hostname and one versioned OEnd contract.
 - OEnd routes to OID and product-domain services privately. Product Workers and databases are not exposed to browsers.
