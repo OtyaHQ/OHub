@@ -1,6 +1,6 @@
 # OHub
 
-**OHub** is the public developer and partner entry point for the Otya ecosystem. Its source repository is [`OtyaHQ/OWeb`](https://github.com/OtyaHQ/OWeb). OHub publishes public documentation, safe examples, product guidance and integration information—not private operations or administrative controls.
+**OHub** is the public developer and partner entry point for the Otya ecosystem. This repository currently retains the legacy GitHub slug [`OtyaHQ/OWeb`](https://github.com/OtyaHQ/OWeb), but its contents are OHub documentation only—not the OWeb website application. The reviewed repository separation is to rename this documentation repository to `OHub` and create a clean `OWeb` repository for the public website source. Do not put the website application into this documentation repository. OHub publishes public documentation, safe examples, product guidance and integration information—not private operations or administrative controls.
 
 > Otya master branding follows the owner-approved original artwork. See [the Otya brand identity standard](BRAND_IDENTITY.md). Do not use substitute or redrawn logos.
 
@@ -40,12 +40,12 @@ OHub remains the public developer and partner documentation repository. It is no
 
 A separate public repository named [`.github`](https://github.com/OtyaHQ/.github) now hosts the OtyaHQ organization profile at `profile/README.md`. Public community-health templates and reusable workflows may be added there after review. This special repository complements OHub; it does not replace the public documentation hub.
 
-Keep OHub focused on public product documentation, safe API examples, partner guidance and release information. OWeb is the separate public website and web application frontend; browser requests use OWeb's same-origin server routes, which communicate with OEnd privately. Keep the special `.github` repository focused on organization presentation and reusable public community assets. Neither public repository may contain private source, production credentials, internal infrastructure inventories, signing material or personal/customer data.
+Keep OHub focused on public product documentation, safe API examples, partner guidance and release information. OWeb is the separate public website application and its own source repository; this documentation repository is not that application. Browser requests use OWeb's same-origin server routes, which communicate with OEnd privately. Keep the special `.github` repository focused on organization presentation and reusable public community assets. Neither public repository may contain private source, production credentials, internal infrastructure inventories, signing material or personal/customer data.
 
 ## Canonical product names
 
 - **Otya** — umbrella brand for the connected ecosystem.
-- **OWeb** — public Otya website and browser-facing web application frontend. OWeb owns website presentation and web experience; OEnd remains the backend.
+- **OWeb** — separate public Otya website application and website source repository (to be created after the current documentation repository is renamed to OHub). OWeb owns website presentation and web experience; OEnd remains the backend.
 - **Opoint** — private internal company ERP, workforce, retail and agency-operations application for Otya only; not a public SaaS.
 - **Omy Play** — local-first media application.
 - **Otya OS** — unified platform and shared experience.
