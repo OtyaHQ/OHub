@@ -14,6 +14,8 @@
 
 Use only routes verified on the official domain. Do not publish guessed documentation, download, status or account URLs.
 
+Official ecosystem email is sent under the **Otya Communications** sender identity. Product-specific email, consent and notification rules are governed by the [Otya Communications Standard](https://github.com/OtyaHQ/OEnd/blob/main/docs/architecture/COMMUNICATIONS_STANDARD.md). OHub documents only public-safe channel policies; it never exposes internal delivery logs, recipient data or provider credentials.
+
 ## Latest update
 
 - [Otya 1.0 confirms its local-first Music scope — 2 September 2026](news/2026-09-02-local-first-music-scope.md)
