@@ -14,7 +14,7 @@
 
 Use only routes verified on the official domain. Do not publish guessed documentation, download, status or account URLs.
 
-Official ecosystem email is sent under the **Otya Communications** sender identity. Product-specific email, consent and notification rules are governed by the [Otya Communications Standard](https://github.com/OtyaHQ/OEnd/blob/main/docs/architecture/COMMUNICATIONS_STANDARD.md). OHub documents only public-safe channel policies; it never exposes internal delivery logs, recipient data or provider credentials.
+Official ecosystem email is sent under the **Otya** sender identity. Product-specific email, consent and notification rules are governed by the [Otya Standard](https://github.com/OtyaHQ/OEnd/blob/main/docs/architecture/COMMUNICATIONS_STANDARD.md). OHub documents only public-safe channel policies; it never exposes internal delivery logs, recipient data or provider credentials.
 
 ## Latest update
 
